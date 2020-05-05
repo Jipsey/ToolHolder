@@ -35,8 +35,10 @@
 //These imports are needed for the following template code
 //------------------------------------------------------------------------------
 using System;
+using System.IO;
 using NXOpen;
 using NXOpen.BlockStyler;
+using ToolHolder_NS.Model;
 
 //------------------------------------------------------------------------------
 //Represents Block Styler application class
@@ -48,11 +50,13 @@ public class ToolHolderDialog
     public static UI theUI = null;
     private string theDlxFileName;
     private NXOpen.BlockStyler.BlockDialog theDialog;
+
+
     private NXOpen.BlockStyler.Label label0;// Block type: Label
     private NXOpen.BlockStyler.Explorer explorer;// Block type: Explorer
     private NXOpen.BlockStyler.Group explorerNode;// Block type: Group
     private NXOpen.BlockStyler.Label stringLabelTool;// Block type: Label
-    private NXOpen.BlockStyler.IntegerBlock doubleToolDiam;// Block type: Integer doubleToolDiam integerToolDiam
+    private NXOpen.BlockStyler.DoubleBlock doubleToolDiam;// Block type: Integer
     private NXOpen.BlockStyler.Separator separator011;// Block type: Separator
     private NXOpen.BlockStyler.IntegerBlock offsetOfTool;// Block type: Integer
     private NXOpen.BlockStyler.Separator separator02;// Block type: Separator
@@ -65,11 +69,12 @@ public class ToolHolderDialog
     private NXOpen.BlockStyler.MultilineString multiline_string0;// Block type: Multiline String
     private NXOpen.BlockStyler.Separator separator06;// Block type: Separator
     private NXOpen.BlockStyler.Tree tree_control0;// Block type: Tree Control
-    
+ 
+   
     private DataService _dataService;
+    private string _tempoDlxFilePath;
 
-
-    private int _num;
+    //private int _num;
 
 
     //------------------------------------------------------------------------------
@@ -82,26 +87,46 @@ public class ToolHolderDialog
             theSession = Session.GetSession();
             theUI = UI.GetUI();
             theDlxFileName = "F:\\Store\\SANEK\\Volume\\NXOpen\\5_ToolHolder\\ToolHolderDialog.dlx";
-            theDialog = theUI.CreateDialog(TheDlxFileName);
-            theDialog.AddApplyHandler(new NXOpen.BlockStyler.BlockDialog.Apply(apply_cb));
-            theDialog.AddOkHandler(new NXOpen.BlockStyler.BlockDialog.Ok(ok_cb));
-            theDialog.AddUpdateHandler(new NXOpen.BlockStyler.BlockDialog.Update(update_cb));
-            theDialog.AddCancelHandler(new NXOpen.BlockStyler.BlockDialog.Cancel(cancel_cb));
-            //theDialog.AddFilterHandler(new NXOpen.BlockStyler.BlockDialog.Filter(filter_cb));
-            theDialog.AddInitializeHandler(new NXOpen.BlockStyler.BlockDialog.Initialize(initialize_cb));
-            theDialog.AddFocusNotifyHandler(new NXOpen.BlockStyler.BlockDialog.FocusNotify(focusNotify_cb));
-            theDialog.AddKeyboardFocusNotifyHandler(new NXOpen.BlockStyler.BlockDialog.KeyboardFocusNotify(keyboardFocusNotify_cb));
-            theDialog.AddEnableOKButtonHandler(new NXOpen.BlockStyler.BlockDialog.EnableOKButton(enableOKButton_cb));
-            theDialog.AddDialogShownHandler(new NXOpen.BlockStyler.BlockDialog.DialogShown(dialogShown_cb));
 
+            //if(!File.Exists(_tempoDlxFilePath))
+            //    throw new Exception(String.Format("нет файла даилога ! \nпуть: {0}", _tempoDlxFilePath));
+            //theDialog = theUI.CreateDialog(_tempoDlxFilePath);
+            //theDialog.AddApplyHandler(new NXOpen.BlockStyler.BlockDialog.Apply(apply_cb));
+            //theDialog.AddOkHandler(new NXOpen.BlockStyler.BlockDialog.Ok(ok_cb));
+            //theDialog.AddUpdateHandler(new NXOpen.BlockStyler.BlockDialog.Update(update_cb));
+            //theDialog.AddCancelHandler(new NXOpen.BlockStyler.BlockDialog.Cancel(cancel_cb));
+            ////theDialog.AddFilterHandler(new NXOpen.BlockStyler.BlockDialog.Filter(filter_cb));
+            //theDialog.AddInitializeHandler(new NXOpen.BlockStyler.BlockDialog.Initialize(initialize_cb));
+            //theDialog.AddFocusNotifyHandler(new NXOpen.BlockStyler.BlockDialog.FocusNotify(focusNotify_cb));
+            //theDialog.AddKeyboardFocusNotifyHandler(new NXOpen.BlockStyler.BlockDialog.KeyboardFocusNotify(keyboardFocusNotify_cb));
+            //theDialog.AddEnableOKButtonHandler(new NXOpen.BlockStyler.BlockDialog.EnableOKButton(enableOKButton_cb));
+            //theDialog.AddDialogShownHandler(new NXOpen.BlockStyler.BlockDialog.DialogShown(dialogShown_cb));
 
-            //string pr = theDialog.TopBlock.Cue;
         }
         catch (Exception ex)
         {
             //---- Enter your exception handling code here -----
             throw ex;
         }
+    }
+
+    public void buildDialog()
+    {
+        if (!File.Exists(_tempoDlxFilePath))
+            throw new Exception(String.Format("нет файла даилога ! \nпуть: {0}", _tempoDlxFilePath));
+
+        theDialog = theUI.CreateDialog(_tempoDlxFilePath);
+        theDialog.AddApplyHandler(new NXOpen.BlockStyler.BlockDialog.Apply(apply_cb));
+        theDialog.AddOkHandler(new NXOpen.BlockStyler.BlockDialog.Ok(ok_cb));
+        theDialog.AddUpdateHandler(new NXOpen.BlockStyler.BlockDialog.Update(update_cb));
+        theDialog.AddCancelHandler(new NXOpen.BlockStyler.BlockDialog.Cancel(cancel_cb));
+        //theDialog.AddFilterHandler(new NXOpen.BlockStyler.BlockDialog.Filter(filter_cb));
+        theDialog.AddInitializeHandler(new NXOpen.BlockStyler.BlockDialog.Initialize(initialize_cb));
+        theDialog.AddFocusNotifyHandler(new NXOpen.BlockStyler.BlockDialog.FocusNotify(focusNotify_cb));
+        theDialog.AddKeyboardFocusNotifyHandler(new NXOpen.BlockStyler.BlockDialog.KeyboardFocusNotify(keyboardFocusNotify_cb));
+        theDialog.AddEnableOKButtonHandler(new NXOpen.BlockStyler.BlockDialog.EnableOKButton(enableOKButton_cb));
+        theDialog.AddDialogShownHandler(new NXOpen.BlockStyler.BlockDialog.DialogShown(dialogShown_cb));
+
     }
 
     public string TheDlxFileName
@@ -196,14 +221,13 @@ public class ToolHolderDialog
     {
         ToolHolderDialog toolHolderDialog = null;
         try
-        {
-   
-          
+        {             
             toolHolderDialog = new ToolHolderDialog();
 			toolHolderDialog._dataService = new DataService(toolHolderDialog);
            
-			// The following method shows the dialog immediately
-            
+
+
+			// The following method shows the dialog immediately            
             toolHolderDialog.Show();
            
         }
@@ -331,7 +355,7 @@ public class ToolHolderDialog
     {
 
       
-        StayVisibleNodes();
+        string [] arr = _dataService.XMLService.NameArrays;
 
         try
         {
@@ -339,7 +363,7 @@ public class ToolHolderDialog
             explorer = (NXOpen.BlockStyler.Explorer)theDialog.TopBlock.FindBlock("explorer");
             explorerNode = (NXOpen.BlockStyler.Group)theDialog.TopBlock.FindBlock("explorerNode");
             stringLabelTool = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock("stringLabelTool");
-            doubleToolDiam = (NXOpen.BlockStyler.IntegerBlock)theDialog.TopBlock.FindBlock("doubleToolDiam");
+            doubleToolDiam = (NXOpen.BlockStyler.DoubleBlock)theDialog.TopBlock.FindBlock("doubleToolDiam");
             separator011 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator011");
             offsetOfTool = (NXOpen.BlockStyler.IntegerBlock)theDialog.TopBlock.FindBlock("offsetOfTool");
             separator02 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator02");
@@ -352,12 +376,15 @@ public class ToolHolderDialog
             multiline_string0 = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock("multiline_string0");
             separator06 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator06");
             tree_control0 = (NXOpen.BlockStyler.Tree)theDialog.TopBlock.FindBlock("tree_control0");
+
+
+
             //------------------------------------------------------------------------------
             //Registration of Treelist specific callbacks
             //------------------------------------------------------------------------------
             //tree_control0.SetOnExpandHandler(new NXOpen.BlockStyler.Tree.OnExpandCallback(OnExpandCallback));
             
-            //tree_control0.SetOnInsertColumnHandler(new NXOpen.BlockStyler.Tree.OnInsertColumnCallback(OnInsertColumnCallback));
+            tree_control0.SetOnInsertColumnHandler(new NXOpen.BlockStyler.Tree.OnInsertColumnCallback(OnInsertColumnCallback));
             
             //tree_control0.SetOnInsertNodeHandler(new NXOpen.BlockStyler.Tree.OnInsertNodeCallback(OnInsertNodecallback));
             
@@ -410,7 +437,14 @@ public class ToolHolderDialog
             //explorer.SetNotifyNodeSelectedPreHandler(new NXOpen.BlockStyler.Explorer.NotifyNodeSelectedPreCallback(notifyNodeSelectedPreCallback));
             
             //explorer.SetNotifyNodeSelectedPostHandler(new NXOpen.BlockStyler.Explorer.NotifyNodeSelectedPostCallback(notifyNodeSelectedPostCallback));
-            
+
+
+
+
+            //---------------------------------
+
+           // CreateAndAddNode("Test");   
+
         }
         catch (Exception ex)
         {
@@ -428,13 +462,26 @@ public class ToolHolderDialog
     {
         try
         {
-            //---- Enter your callback code here -----
+            //Добавляем колонки
+
+            tree_control0.InsertColumn((int) Columns.First, "название", 200);
+            tree_control0.InsertColumn((int) Columns.Second, "тип", 40);
+            tree_control0.InsertColumn((int)Columns.Third, "длина, мм", 60);
+            tree_control0.InsertColumn((int)Columns.Fourth, "крепеление", 60);
+
+            tree_control0.SetColumnResizePolicy((int) Columns.First,Tree.ColumnResizePolicy.ConstantWidth);
+            tree_control0.SetColumnResizePolicy((int) Columns.Second,Tree.ColumnResizePolicy.ConstantWidth);
+            tree_control0.SetColumnResizePolicy((int)Columns.Third, Tree.ColumnResizePolicy.ConstantWidth);
+            tree_control0.SetColumnResizePolicy((int)Columns.Fourth, Tree.ColumnResizePolicy.ConstantWidth);
         }
         catch (Exception ex)
         {
             //---- Enter your exception handling code here -----
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
+
+
+        CreateAndAddNode("test");
     }
     
     //------------------------------------------------------------------------------
@@ -631,9 +678,10 @@ public class ToolHolderDialog
     //{
     //}
     
-    //public void OnInsertColumnCallback(NXOpen.BlockStyler.Tree tree, NXOpen.BlockStyler.Node node, int columnID)
-    //{
-    //}
+   public void OnInsertColumnCallback(NXOpen.BlockStyler.Tree tree, NXOpen.BlockStyler.Node node, int columnID)
+    {
+
+    }
     
     //public void OnInsertNodecallback(NXOpen.BlockStyler.Tree tree, NXOpen.BlockStyler.Node node)
     //{
@@ -747,21 +795,59 @@ public class ToolHolderDialog
         return plist;
     }
 
-    public void SetVisibleNodes(int num)
+    public enum Columns  
     {
-
-        _num = num;
+        First = 0, 
+        Second = 1, 
+        Third = 2,
+        Fourth = 3
     }
 
-    private void StayVisibleNodes()
+    //public void SetVisibleNodes(int num)
+    //{
+
+    //    _num = num;
+    //}
+
+
+
+    private Node CreateAndAddNode(string libRef)
     {
+        Node parentNode = null;
+        Node node = tree_control0.CreateNode(libRef);
 
-       PropertyList pl= theDialog.GetBlockProperties("explorerNode");
-       UIBlock[] arr = theDialog.TopBlock.GetBlocks();
+        //настройки ноды
+        //"turn_holder_hand_left" левый держатель
+        //"turn_holder_hand_neutral" нейтральный держатель
+        //"turn_holder_round" круглый держатель
+        // "snowflake" ???
+        // "sm_solid_punch_pierce_face" объёмная буква Т
+        // "sm_solid_punch_tool" желтая объёмная буква Т
+        // "cleanup" иконка метлы
+        // "clock" часы
+        // "hole_drill_size" сверло
+        // "hole_tapered" конус похож на термооправку
+        // "bc_pinned" - иконка похожа на цангу
+        //"cclw" "clw" "od_55_l" "od_80_l" иконка токарного резца
 
 
-       UIBlock block = (NXOpen.BlockStyler.Group)theDialog.TopBlock.FindBlock("explorerNode");
-       block.Show = false;
 
+        node.ForegroundColor = 198;
+        node.DisplayIcon = "sm_solid_punch_pierce_face";   //"extrude", "cone", "block", "blend"
+        node.SelectedIcon = "sm_solid_punch_tool";
+
+        //вставляем ноды в дерево
+        
+        tree_control0.InsertNode(node,parentNode, null,Tree.NodeInsertOption.Sort);
+        node.ScrollTo((int) Columns.First, Node.Scroll.Center);
+
+        return node;
     }
+
+    public void SetTempoDlxFile(string tempoDlxFilePath)
+    {
+        _tempoDlxFilePath = tempoDlxFilePath;
+    }
+
+
 }

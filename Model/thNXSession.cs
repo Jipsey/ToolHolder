@@ -12,7 +12,7 @@ using Path = System.IO.Path;
 
 namespace ToolHolder_NS.Model
 {
-    class thNXSession
+    public class thNXSession
     {
         public Session _innerSession;
         public static Part _workPart;
@@ -54,7 +54,7 @@ namespace ToolHolder_NS.Model
             get { return toolArray; }
         }
 
-        public static Session InnerSession
+        public Session InnerSession
         {
             get { return _innerSession; }
         }

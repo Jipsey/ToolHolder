@@ -22,7 +22,7 @@ public class DataService
     private static Dictionary<NCGroup, List<Operation>> _programmCNC = null;
     private static Operation[] operations;
     private static UI _ui;
-    private XmlService xmlService;
+    private XmlService _xmlService;
 
     private ListingWindow _lw;
 
@@ -38,10 +38,20 @@ public class DataService
         _ui = ToolHolderDialog.theUI;
         _dialog = dialogObject;
         _lw = _theSession.ListingWindow;
-        _dialog.SetVisibleNodes(5);
+        //_dialog.SetVisibleNodes(5);
         data = new thNXSession(_theSession,_ui);
-        xmlService = new XmlService(data, _dialog);
+        _xmlService = new XmlService(data, _dialog);
+        if (XmlService._tempoXmlDocPath != null)
+        _dialog.SetTempoDlxFile(XmlService._tempoXmlDocPath);
+        _dialog.buildDialog();
     }
+
+    public XmlService XMLService
+    {
+        get { return _xmlService; }
+    }
+
+
     /// <summary>
     /// стоит далее этот метод удалить
     /// </summary>

@@ -9,19 +9,19 @@ using System.Xml;
 using NXOpen;
 using ToolHolder_NS.Model;
 
-class XmlService
+public class XmlService
 {
     private static string path;
             //"F:\\Store\\SANEK\\Volume\\NXOpen\\5_ToolHolder\\GUI\\forXMLCreator\\TEST_ToolHolderDialog.dlx";
 
-        private static string _tempoXmlDocPath;
+        public static string _tempoXmlDocPath;
         //    "F:\\Store\\SANEK\\Volume\\NXOpen\\5_ToolHolder\\GUI\\forXMLCreator\\newTEST_ToolHolderDialog.dlx";
 
         private thNXSession _theSession;
         private thNXTool[] _nxTools;
         private int counter = 1;
         static Dictionary<string,int> dictionary = new Dictionary<string, int>();
-        static string[] nameArrays = {
+        private string[] _nameArrays = {
             "explorerNode",
             "stringLabelTool",
             "doubleToolDiam",
@@ -45,7 +45,7 @@ class XmlService
             _nxTools = thSession.ToolArray;
             _theSession = thSession;
             path = dialogObject.TheDlxFileName;
-            _tempoXmlDocPath = _getPathOfProject() + "\\doNotDeleteMe.dlx";
+            _tempoXmlDocPath = _getPathOfProject() + "doNotDeleteMe.dlx";
             
             if (!File.Exists(path))
                 throw  new Exception("Файл диалога не существует!");
@@ -53,9 +53,16 @@ class XmlService
 
             buildDLXFile();
 
+        }
 
-            
-           // xmlDoc.Save(_tempoXmlDocPath);
+        public static string TempoXmlDocPath
+        {
+            get { return _tempoXmlDocPath; }
+        }
+
+        public string[] NameArrays
+        {
+            get { return _nameArrays; }
         }
 
 
@@ -65,33 +72,30 @@ class XmlService
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(path);
 
-            XmlDocument tempoXMLDocument = new XmlDocument();
-
             XmlElement xRoot = xmlDoc.DocumentElement;
-            
             addNodes(xRoot);
            
-            tempoXMLDocument.Save(_tempoXmlDocPath);
+            xmlDoc.Save(TempoXmlDocPath);
         }
 
         private void addNodes(XmlElement xRoot)
         {
-            XmlNode seekTree = xRoot.ChildNodes.OfType<XmlNode>().ToArray()
-                .Where(it => (it.Attributes.Count == 13 && it.Name.Equals("item")) &&
-                             (it.Attributes.Item(0).Name.Equals("ContainerItems") &&
-                              it.Attributes.Item(5).Name.Equals("containerBrowserName"))).FirstOrDefault()
+            XmlNode oldNode = xRoot.ChildNodes.OfType<XmlNode>()
+                .ToArray().FirstOrDefault(it => (it.Attributes.Count == 13 && it.Name.Equals("item")) &&
+                                                (it.Attributes.Item(0).Name.Equals("ContainerItems") &&
+                                                 it.Attributes.Item(5).Name.Equals("containerBrowserName")))
                 .FirstChild.FirstChild.FirstChild.FirstChild;
 
-            XmlNode nodeDuplicate = seekTree.CloneNode(true);
-            for (int i = 0; i < _nxTools.Length; i++)
+            for (int i = 1; i < _nxTools.Length; i++)
             {
-                nodeDuplicate = shiftAttribute(nodeDuplicate);
-                seekTree.ParentNode.InsertAfter(nodeDuplicate, seekTree);
+                var newNode = shiftAttribute(oldNode.CloneNode(true));
+                oldNode.ParentNode.InsertAfter(newNode, oldNode.ParentNode.LastChild);
+                counter++;
             }
         }
 
         /// <summary>
-        /// метод к значениям аттрибутов входящих в массив nameArrays прибавляет значение переменной counter
+        /// метод к значениям аттрибутов входящих в массив _nameArrays прибавляет значение переменной counter, используется рекурсия
         /// </summary>
         /// <param name="entryNode"></param>
         /// <returns></returns>
@@ -99,7 +103,7 @@ class XmlService
         {
             foreach (XmlAttribute attribute in entryNode.Attributes)
             {
-                if (nameArrays.Contains(attribute.Value))
+                if (NameArrays.Contains(attribute.Value))
                     attribute.Value += counter;
             }
              if(entryNode.HasChildNodes)
@@ -107,8 +111,6 @@ class XmlService
                  {
                      shiftAttribute(child);
                  }
-
-            counter++;
             return entryNode;
         }
 

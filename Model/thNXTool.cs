@@ -17,7 +17,7 @@ namespace ToolHolder_NS.Model
         private int _zOffset;
         private string _desc;
         private string _toolName;
-        private ToolBuilder _toolBuilder;
+        private MillToolBuilder _toolBuilder;
 
         public Tool Tool
         {
@@ -41,11 +41,22 @@ namespace ToolHolder_NS.Model
             }
         }
 
+        public thNXToolHolder NxToolHolder
+        {
+            get { return nxToolHolder; }
+        }
+
         public thNXTool(Tool tool)
         {
+            initToolBuilder(tool);
             Tool = tool;
             _toolNumber = setToolNumber();
-            initToolBuilder(tool);
+            _toolName = Tool.Name;
+            _desc = _toolBuilder.TlDescription;
+            _diam = _toolBuilder.TlDiameterBuilder.Value;
+            _zOffset = determinateZOffset(); 
+
+
             if (Builder.HolderLibraryReference == null || Builder.HolderLibraryReference.Equals(string.Empty))
                 nxToolHolder = null;
 
@@ -57,11 +68,15 @@ namespace ToolHolder_NS.Model
 
         private void initToolBuilder(Tool tool)
         {
-          _toolBuilder = thNXSession._workPart.CAMSetup.CAMGroupCollection.CreateMillToolBuilder(tool);
-          
+          _toolBuilder = thNXSession._workPart.CAMSetup.CAMGroupCollection.CreateMillToolBuilder(tool);          
         }
 
-
+        private int determinateZOffset()
+        {
+           double holderOffset = _toolBuilder.HolderSectionBuilder.TlHolderOffsetBuilder.Value;
+           double length = _toolBuilder.TlHeightBuilder.Value;
+           return (int) (length - holderOffset);
+        }
 
 
         private int setToolNumber()

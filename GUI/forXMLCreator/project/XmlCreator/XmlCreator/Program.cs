@@ -20,7 +20,6 @@ namespace XmlCreator
         static char ob = '<';
         static char cb = '>';
         private static int counter = 1;
-        static string lastPath = String.Empty;
         static Dictionary<string,int> dictionary = new Dictionary<string, int>();
         static string[] nameArrays = {
             "explorerNode",
@@ -40,16 +39,15 @@ namespace XmlCreator
             "tree_control0",
         };
 
-
         static void Main(string[] args)
         {
-            File.Exists(path);
+            if (!File.Exists(path))
+                throw new Exception(" файла нет!");
 
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(path);
+            List<XmlNode> list = new List<XmlNode>();
 
-            XmlDocument xmlDoc2 = new XmlDocument();
-            xmlDoc2.Load(newXmlDocPath);
 
             XmlElement xRoot = xmlDoc.DocumentElement;
 
@@ -59,11 +57,18 @@ namespace XmlCreator
                               it.Attributes.Item(5).Name.Equals("containerBrowserName"))).FirstOrDefault()
                 .FirstChild.FirstChild.FirstChild.FirstChild;
 
-            XmlNode nodeDuplicate = seekTree.CloneNode(true);
 
-            nodeDuplicate = shiftAttribute(nodeDuplicate);
+            for (int i = 0; i < 11; i++)
+            {
 
-            seekTree.ParentNode.InsertAfter(nodeDuplicate, seekTree);
+            var nodeDuplicate = shiftAttribute(seekTree.CloneNode(true));
+            seekTree.ParentNode.InsertAfter(nodeDuplicate, seekTree.ParentNode.LastChild);
+            
+            //seekTree = seekTree.ParentNode.FirstChild;
+            //list.Add(nodeDuplicate);
+            counter++;
+            }
+            
             xmlDoc.Save(newXmlDocPath);
         }
 
@@ -74,6 +79,9 @@ namespace XmlCreator
         /// <returns></returns>
          static XmlNode shiftAttribute(XmlNode entryNode)
         {
+            XmlNode node = entryNode.CloneNode(true);
+            XmlNode answer;
+
             foreach (XmlAttribute attribute in entryNode.Attributes)
             {
                 if (nameArrays.Contains(attribute.Value))
@@ -84,8 +92,9 @@ namespace XmlCreator
                  {
                      shiftAttribute(child);
                  }
-
-            return entryNode;
+            answer = entryNode;
+            entryNode = node;
+            return answer;
         }
 
 

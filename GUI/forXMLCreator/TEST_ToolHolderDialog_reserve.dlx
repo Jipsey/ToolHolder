@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Dialog ContainerItems="1" Expanded="1" NX="12.0.2" Saved="Sat May  2 15:05:42 2020
+" class="" creator="Sanek" id="Dialog" languageInfo="Language and Codeset: english 14" name="Dialog" notes="" title="F:\Store\SANEK\Volume\NXOpen\5_ToolHolder\GUI\forXMLCreator\TEST_ToolHolderDialog_reserve.dlx" type="uicomp" version="1.0.0">
+    <item Expanded="1" class="UICOMP_label" hierarchy="" icon="styler_label.bmp" id="label0" name="label0" notes="" presentation="Label/Bitmap" type="uicomp">
+		<PropertyList id="id" mode="0">
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="label0"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Title" mask="0" name="Title" sname="Label" source="1" type="utfstring" value="No Title"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP_widget" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="HQBitmap" mask="16384" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Icon" mask="128" name="Icon" sname="Bitmap" source="3" type="string" value=""/>
+			<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Tooltip" mask="0" name="Tooltip" sname="Tooltip" source="1" type="utfstring" value=""/>
+			<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="WordWrap" mask="16384" name="WordWrap" sname="WordWrap" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+			<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+			<Property ClassID="UGS::UICOMP_label" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+			  
+			  
+			<Option name="Horizontal" value="0"/><Option name="Vertical" value="1"/></Property>
+			<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="DisplayBitmapLabel" mask="0" name="DisplayBitmapLabel" sname="DisplayBitmapLabel" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+			<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+			<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+			<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+		</PropertyList>
+    </item>
+	<item ContainerItems="1" DoNotGroupThisObject="1" Expanded="1" IsAContainer="1" class="UGS::UI::Comp::Explorer" containerBrowserName="explorer" hierarchy="" icon="styler_browser_tab_control.bmp" id="explorer" name="explorer" notes="" presentation="Explorer" type="uicomp">
+		<PropertyList>
+			<Property ClassID="UGS::UI::Comp::Container" dynamic="1" group="Block Specific::" hierarchy="UGS::UI::Comp::Explorer" id="Members" mask="0" name="Members" sname="Members" source="1" type="array">
+				<PropertyList ClassID="UGS::UI::Comp::Container" Expanded="1" hierarchy="UGS::UI::Comp::Explorer" icon="tiles_palette.bmp" id="ContainerItems" mode="1">
+					<Property class="UGS::UICOMP_group" hierarchy="UGS::UI::Comp::Explorer" id="explorerNode" mask="256" name="explorerNode" presentation="Group" type="uicomp">
+						<item ContainerItems="1" Expanded="1" OneElementRule="1" class="UGS::UICOMP_group" hierarchy="" icon="styler_browser_tab_control.bmp" id="explorerNode" name="explorerNode" notes="" presentation="Explorer Node" type="uicomp">
+							<PropertyList id="id" mode="0">
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="API Name" mask="0" name="API Name" sname="APIName" source="3" type="string" value="explorerNode"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Title" mask="1" name="Title" sname="Label" source="1" type="utfstring" value="Node"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Expanded" mask="0" name="Expanded" sname="Expanded" source="2" type="logical" value="True"/>
+										<Property ClassID="UGS::UI::Comp::Container" dynamic="1" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="Members" mask="0" name="Members" sname="Members" source="1" type="array">
+											<PropertyList ClassID="UGS::UI::Comp::Container" Expanded="1" hierarchy="UGS::UICOMP_group" icon="tiles_palette.bmp" id="ContainerItems" mode="1">
+												<Property class="UICOMP_label" hierarchy="UGS::UICOMP_group" id="stringLabelTool" mask="256" name="stringLabelTool" presentation="Label/Bitmap" type="uicomp">
+													<item Expanded="1" class="UICOMP_label" hierarchy="" icon="styler_label.bmp" id="stringLabelTool" name="stringLabelTool" notes="" presentation="Label/Bitmap" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="stringLabelTool"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="HQBitmap" mask="16384" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Icon" mask="128" name="Icon" sname="Bitmap" source="3" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Tooltip" mask="0" name="Tooltip" sname="Tooltip" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="WordWrap" mask="16384" name="WordWrap" sname="WordWrap" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_label" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+																
+																
+															<Option name="Horizontal" value="0"/><Option name="Vertical" value="1"/></Property>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="DisplayBitmapLabel" mask="0" name="DisplayBitmapLabel" sname="DisplayBitmapLabel" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16640" name="Left" offset="0" sname="Left" source="3" target="separator04" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Dialog" type="attachment"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="НАЗНАЧЕНЫЙ ИНСТРУМЕНТ"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_integer" hierarchy="UGS::UICOMP_group" id="integerToolDiam" mask="256" name="integerToolDiam" presentation="Integer" type="uicomp">
+													<item Expanded="1" class="UICOMP_integer" hierarchy="UICOMP_double" icon="styler_integer" id="integerToolDiam" name="integerToolDiam" notes="" presentation="Integer" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="integerToolDiam"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="TitleVisibility" mask="0" name="TitleVisibility" sname="TitleVisibility" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="Icon" mask="128" name="Icon" sname="Bitmap" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_value" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="PresentationStyle" mask="16384" name="PresentationStyle" selected="0" sname="PresentationStyle" source="1" type="enum">
+																
+																
+																
+																
+																
+															<Option name="Keyin" value="0"/><Option name="Spin" value="1"/><Option name="Scale" value="2"/><Option name="ScaleKeyin" value="3"/><Option name="Combo" value="4"/></Property>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="UserLockable" mask="69632" name="UserLockable" sname="UserLockable" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="UserLocked" mask="69634" name="UserLocked" sname="UserLocked" source="2" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="PageIncrement" mask="4" name="PageIncrement" sname="PageIncrement" source="1" type="double" value="1e+19"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="LineIncrement" mask="4" name="LineIncrement" sname="LineIncrement" source="1" type="double" value="1e+19"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="ValueVisibility" mask="4" name="ValueVisibility" sname="ShowScaleValue" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="LimitsVisibility" mask="4" name="LimitsVisibility" sname="ScaleLimits" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="MinTitle" mask="4" name="MinTitle" sname="ScaleMinLimitLabel" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="MaxTitle" mask="4" name="MaxTitle" sname="ScaleMaxLimitLabel" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="AdaptiveLimits" mask="4" name="AdaptiveLimits" sname="AdaptiveScaleLimits" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UIFW_spin_options" group="Block Specific::" hierarchy="UGS::UIFW_spin_options" id="Increment" mask="4" name="Increment" sname="Increment" source="1" type="double" value="1"/>
+															<Property ClassID="UGS::UIFW_spin_options" group="Block Specific::" hierarchy="UGS::UIFW_spin_options" id="WrapSpin" mask="4" name="WrapSpin" sname="WrapSpin" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MinInclusive" mask="4" name="MinInclusive" sname="MinInclusive" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MaxInclusive" mask="4" name="MaxInclusive" sname="MaxInclusive" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="RequiredInput" mask="69632" name="RequiredInput" sname="RequiredInput" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="AllowUnassignedValue" mask="69632" name="AllowUnassignedValue" sname="AllowUnassignedValue" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="Value" mask="0" name="Value" sname="Value" source="4" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MaximumValue" mask="0" name="MaximumValue" sname="MaximumValue" source="1" type="integer" value="2147483647"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MinimumValue" mask="0" name="MinimumValue" sname="MinimumValue" source="1" type="integer" value="-2147483648"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_integer" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+																
+																
+															<Option name="Horizontal" value="0"/><Option name="Vertical" value="1"/></Property>
+															<Property ClassID="UGS::UICOMP_integer" data="" dtype="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="ComboOptions" mask="4" name="ComboOptions" size="0" sname="ComboOptions" source="1" type="stlvector"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="диаметр инструмента"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="ReadOnlyValue" mask="16640" name="ReadOnlyValue" sname="ReadOnlyValue" source="1" type="logical" value="True"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_separator" hierarchy="UGS::UICOMP_group" id="separator011" mask="256" name="separator011" presentation="Separator" type="uicomp">
+													<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_multiline_string" icon="styler_separator.bmp" id="separator011" name="separator011" notes="" presentation="Separator" type="uicomp">
+														<PropertyList id="id" mode="0"><Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator011"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_integer" hierarchy="UGS::UICOMP_group" id="offsetOfTool" mask="256" name="offsetOfTool" presentation="Integer" type="uicomp">
+													<item Expanded="1" class="UICOMP_integer" hierarchy="UICOMP_double" icon="styler_integer" id="offsetOfTool" name="offsetOfTool" notes="" presentation="Integer" type="uicomp">
+														<PropertyList id="id" mode="0"><Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="offsetOfTool"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="TitleVisibility" mask="0" name="TitleVisibility" sname="TitleVisibility" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="Icon" mask="128" name="Icon" sname="Bitmap" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_value" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="PresentationStyle" mask="16384" name="PresentationStyle" selected="0" sname="PresentationStyle" source="1" type="enum">
+																
+																
+																
+																
+																
+															<Option name="Keyin" value="0"/><Option name="Spin" value="1"/><Option name="Scale" value="2"/><Option name="ScaleKeyin" value="3"/><Option name="Combo" value="4"/></Property>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="UserLockable" mask="69632" name="UserLockable" sname="UserLockable" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="UserLocked" mask="69634" name="UserLocked" sname="UserLocked" source="2" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="PageIncrement" mask="4" name="PageIncrement" sname="PageIncrement" source="1" type="double" value="1e+19"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="LineIncrement" mask="4" name="LineIncrement" sname="LineIncrement" source="1" type="double" value="1e+19"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="ValueVisibility" mask="4" name="ValueVisibility" sname="ShowScaleValue" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="LimitsVisibility" mask="4" name="LimitsVisibility" sname="ScaleLimits" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="MinTitle" mask="4" name="MinTitle" sname="ScaleMinLimitLabel" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="MaxTitle" mask="4" name="MaxTitle" sname="ScaleMaxLimitLabel" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="AdaptiveLimits" mask="4" name="AdaptiveLimits" sname="AdaptiveScaleLimits" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UIFW_spin_options" group="Block Specific::" hierarchy="UGS::UIFW_spin_options" id="Increment" mask="4" name="Increment" sname="Increment" source="1" type="double" value="1"/>
+															<Property ClassID="UGS::UIFW_spin_options" group="Block Specific::" hierarchy="UGS::UIFW_spin_options" id="WrapSpin" mask="4" name="WrapSpin" sname="WrapSpin" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MinInclusive" mask="4" name="MinInclusive" sname="MinInclusive" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MaxInclusive" mask="4" name="MaxInclusive" sname="MaxInclusive" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="RequiredInput" mask="69632" name="RequiredInput" sname="RequiredInput" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="AllowUnassignedValue" mask="69632" name="AllowUnassignedValue" sname="AllowUnassignedValue" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="Value" mask="0" name="Value" sname="Value" source="4" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MaximumValue" mask="0" name="MaximumValue" sname="MaximumValue" source="1" type="integer" value="2147483647"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MinimumValue" mask="0" name="MinimumValue" sname="MinimumValue" source="1" type="integer" value="-2147483648"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_integer" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+																
+																
+															<Option name="Horizontal" value="0"/><Option name="Vertical" value="1"/></Property>
+															<Property ClassID="UGS::UICOMP_integer" data="" dtype="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="ComboOptions" mask="4" name="ComboOptions" size="0" sname="ComboOptions" source="1" type="stlvector"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="вылет инстумента"/>
+															<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="ReadOnlyValue" mask="16640" name="ReadOnlyValue" sname="ReadOnlyValue" source="1" type="logical" value="True"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_separator" hierarchy="UGS::UICOMP_group" id="separator02" mask="256" name="separator02" presentation="Separator" type="uicomp">
+													<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_string" icon="styler_separator.bmp" id="separator02" name="separator02" notes="" presentation="Separator" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="separator02"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_multiline_string" hierarchy="UGS::UICOMP_group" id="multiline_string01" mask="256" name="multiline_string01" presentation="Multi-line String" type="uicomp">
+													<item Expanded="1" class="UICOMP_multiline_string" hierarchy="UICOMP_separator" icon="styler_browser_multilinetext.bmp" id="multiline_string01" name="multiline_string01" notes="" presentation="Multi-line String" type="uicomp">
+														<PropertyList id="id" mode="0"><Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="multiline_string01"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="HQBitmap" mask="69636" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UI::Comp::BaseString" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="IsPdmString" mask="69636" name="IsPdmString" sname="IsPdmString" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="IsIti" mask="86016" name="IsIti" sname="AllowInternationalTextInput" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Width" mask="16384" name="Width" sname="Width" source="1" type="integer" value="0"/><Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MaximumCharactersAccepted" mask="16384" name="MaximumCharactersAccepted" sname="MaximumCharactersAccepted" source="1" type="integer" value="0"/><Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/><Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/><Property ClassID="UGS::UICOMP_multiline_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum"><Option name="Horizontal" value="0"/><Option name="Vertical" value="1"/></Property><Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/><Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/><Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16640" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/><Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/><Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Sensitivity" mask="256" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/><Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MaximumHeight" mask="16640" name="MaximumHeight" sname="MaximumHeight" source="1" type="integer" value="5"/><Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="ResizeHeightWithDialog" mask="16640" name="ResizeHeightWithDialog" sname="ResizeHeightWithDialog" source="1" type="logical" value="False"/><Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MinimumHeight" mask="16640" name="MinimumHeight" sname="MinimumHeight" source="1" type="integer" value="1"/><Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Height" mask="16640" name="Height" sname="Height" source="1" type="integer" value="3"/><Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="описание"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Value_1" mask="256" name="Value_1" sname="Value" source="4" type="utfstrings">
+																
+														<Strings value="тут должно быть описание инструмента"/></Property>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_separator" hierarchy="UGS::UICOMP_group" id="separator03" mask="256" name="separator03" presentation="Separator" type="uicomp">
+													<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_integer" icon="styler_separator.bmp" id="separator03" name="separator03" notes="" presentation="Separator" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator03"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_label" hierarchy="UGS::UICOMP_group" id="stringLabelHolder" mask="256" name="stringLabelHolder" presentation="Label/Bitmap" type="uicomp">
+													<item Expanded="1" class="UICOMP_label" hierarchy="" icon="styler_label.bmp" id="stringLabelHolder" name="stringLabelHolder" notes="" presentation="Label/Bitmap" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="stringLabelHolder"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="HQBitmap" mask="16384" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Icon" mask="128" name="Icon" sname="Bitmap" source="3" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Tooltip" mask="0" name="Tooltip" sname="Tooltip" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="WordWrap" mask="16384" name="WordWrap" sname="WordWrap" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_label" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+																
+																
+															<Option name="Horizontal" value="0"/><Option name="Vertical" value="1"/></Property>
+															<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="DisplayBitmapLabel" mask="0" name="DisplayBitmapLabel" sname="DisplayBitmapLabel" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16640" name="Left" offset="0" sname="Left" source="3" target="separator04" type="attachment"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="НАЗНАЧЕНАЯ ОПРАВКА"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Dialog" type="attachment"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_separator" hierarchy="UGS::UICOMP_group" id="separator04" mask="256" name="separator04" presentation="Separator" type="uicomp">
+													<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_label" icon="styler_separator.bmp" id="separator04" name="separator04" notes="" presentation="Separator" type="uicomp">
+														<PropertyList id="id" mode="0"><Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator04"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_string" hierarchy="UGS::UICOMP_group" id="stringLibRef1" mask="256" name="stringLibRef1" presentation="String" type="uicomp">
+													<item Expanded="1" class="UICOMP_string" hierarchy="" icon="styler_string.bmp" id="stringLibRef1" name="stringLibRef1" notes="" presentation="String" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="stringLibRef1"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_string" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_string" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_string" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UI::Comp::BaseString" group="Other::" hierarchy="UGS::UICOMP_string" id="IsPdmString" mask="69636" name="IsPdmString" sname="IsPdmString" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="Icon" mask="128" name="Icon" sname="Bitmap" source="3" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_string" group="Other::" hierarchy="UGS::UICOMP_string" id="IsIti" mask="16384" name="IsIti" sname="AllowInternationalTextInput" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_string" group="Other::" hierarchy="UGS::UICOMP_string" id="IsPassword" mask="16384" name="IsPassword" sname="IsPassword" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="WideValue" mask="4" name="WideValue" sname="WideValue" source="4" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="MaxTextLength" mask="16384" name="MaxTextLength" sname="MaxTextLength" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="ListItems" mask="4" name="ListItems" sname="ListItems" source="1" type="utfstrings"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="Tooltip" mask="0" name="Tooltip" sname="Tooltip" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="TrueWidth" mask="86020" name="TrueWidth" sname="TrueWidth" source="1" type="integer" value="-1"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipTexts" mask="2" name="BalloonTooltipTexts" sname="BalloonTooltipTexts" source="1" type="utfstrings"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipImages" mask="2" name="BalloonTooltipImages" sname="BalloonTooltipImages" source="1" type="strings"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="RequiredInput" mask="0" name="RequiredInput" sname="RequiredInput" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16640" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16640" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="Value" mask="0" name="Value" sname="Value" source="4" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="библиотечкая ссылка"/>
+															<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="ReadOnlyString" mask="16640" name="ReadOnlyString" sname="ReadOnlyString" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="PresentationStyle" mask="16640" name="PresentationStyle" selected="0" sname="PresentationStyle" source="1" type="enum">
+																
+																
+																
+																
+																
+															<Option name="KeyIn" value="0"/><Option name="Wide" value="1"/><Option name="List" value="2"/><Option name="Combo" value="3"/><Option name="Autocomplete" value="4"/></Property>
+															<Property ClassID="UGS::UICOMP_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="Width" mask="16640" name="Width" selected="1" sname="Width" source="1" type="enum">
+																
+																
+															<Option name="Narrow" value="0"/><Option name="Standard" value="1"/></Property>
+															<Property ClassID="UGS::UICOMP_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipLayout" mask="256" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+																
+																
+															<Option name="Horizontal" value="0"/><Option name="Vertical" value="1"/></Property>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_separator" hierarchy="UGS::UICOMP_group" id="separator05" mask="256" name="separator05" presentation="Separator" type="uicomp">
+													<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_separator" icon="styler_separator.bmp" id="separator05" name="separator05" notes="" presentation="Separator" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator05"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_multiline_string" hierarchy="UGS::UICOMP_group" id="multiline_string0" mask="256" name="multiline_string0" presentation="Multi-line String" type="uicomp">
+													<item Expanded="1" class="UICOMP_multiline_string" hierarchy="UICOMP_separator" icon="styler_browser_multilinetext.bmp" id="multiline_string0" name="multiline_string0" notes="" presentation="Multi-line String" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="multiline_string0"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="HQBitmap" mask="69636" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UI::Comp::BaseString" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="IsPdmString" mask="69636" name="IsPdmString" sname="IsPdmString" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="IsIti" mask="86016" name="IsIti" sname="AllowInternationalTextInput" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Width" mask="16384" name="Width" sname="Width" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MaximumCharactersAccepted" mask="16384" name="MaximumCharactersAccepted" sname="MaximumCharactersAccepted" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+															<Property ClassID="UGS::UICOMP_multiline_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+																
+																
+															<Option name="Horizontal" value="0"/><Option name="Vertical" value="1"/></Property>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Value_1" mask="256" name="Value_1" sname="Value" source="4" type="utfstrings">
+																
+															<Strings value="тут должно быть описание оправки"/></Property>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="описание"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16640" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Sensitivity" mask="256" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MaximumHeight" mask="16640" name="MaximumHeight" sname="MaximumHeight" source="1" type="integer" value="5"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="ResizeHeightWithDialog" mask="16640" name="ResizeHeightWithDialog" sname="ResizeHeightWithDialog" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MinimumHeight" mask="16640" name="MinimumHeight" sname="MinimumHeight" source="1" type="integer" value="1"/>
+															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Height" mask="16640" name="Height" sname="Height" source="1" type="integer" value="3"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_separator" hierarchy="UGS::UICOMP_group" id="separator06" mask="256" name="separator06" presentation="Separator" type="uicomp">
+													<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_multiline_string" icon="styler_separator.bmp" id="separator06" name="separator06" notes="" presentation="Separator" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator06"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+														</PropertyList>
+													</item>
+												</Property>
+												<Property class="UICOMP_tree_control" hierarchy="UGS::UICOMP_group" id="tree_control0" mask="256" name="tree_control0" presentation="Tree List" type="uicomp">
+													<item Expanded="1" class="UICOMP_tree_control" hierarchy="UICOMP_separator" icon="styler_tree.bmp" id="tree_control0" name="tree_control0" notes="" presentation="Tree List" type="uicomp">
+														<PropertyList id="id" mode="0">
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="tree_control0"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_tree_control" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+															<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_tree_control" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="MinimumHeight" mask="16384" name="MinimumHeight" sname="MinimumHeight" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="MinimumWidth" mask="16384" name="MinimumWidth" sname="MinimumWidth" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="MaximumHeight" mask="16384" name="MaximumHeight" sname="MaximumHeight" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="MaximumWidth" mask="16384" name="MaximumWidth" sname="MaximumWidth" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ScrollFrozenColumn" mask="0" name="ScrollFrozenColumn" sname="ScrollFrozenColumn" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ShowMultipleColumns" mask="0" name="ShowMultipleColumns" sname="ShowMultipleColumns" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ShowToolTips" mask="0" name="ShowToolTips" sname="ShowToolTips" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ShowExpandCollapseMarker" mask="0" name="ShowExpandCollapseMarker" sname="ShowExpandCollapseMarker" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="SortRootNodes" mask="0" name="SortRootNodes" sname="SortRootNodes" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="возможные оправки для данного инструмента"/>
+															<Property ClassID="UGS::UICOMP_tree_control" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="SelectionMode" mask="256" name="SelectionMode" selected="2" sname="SelectionMode" source="1" type="enum">
+																
+																
+															<Option name="None" value="0"/><Option name="Single" value="1"/><Option name="Multiple" value="2"/></Property>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="InitialWidth" mask="16640" name="InitialWidth" sname="Width" source="1" type="integer" value="0"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="CanStretchWidth" mask="16640" name="CanStretchWidth" sname="CanStretchWidth" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="CanStretchHeight" mask="16640" name="CanStretchHeight" sname="CanStretchHeight" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16640" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16640" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ShowHeader" mask="256" name="ShowHeader" sname="ShowHeader" source="1" type="logical" value="True"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ScrollLineNumber" mask="256" name="ScrollLineNumber" sname="ScrollLineNumber" source="1" type="integer" value="-1"/>
+															<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="InitialHeight" mask="16640" name="InitialHeight" sname="Height" source="1" type="integer" value="150"/>
+														</PropertyList>
+													</item>
+												</Property>
+											</PropertyList>
+										</Property>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Group" mask="86020" name="Group" sname="Group" source="1" type="logical" value="True"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="2" type="logical" value="False"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+										<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+										<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_group" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+										<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_group" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+										<Property ClassID="UGS::UICOMP_group" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="Column" mask="16384" name="Column" sname="Column" source="1" type="integer" value="1"/>
+										<Property ClassID="UGS::UICOMP_group" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+										<Property ClassID="UGS::UICOMP_group" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+										<Property ClassID="UGS::UICOMP_group" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+											<Option name="Horizontal" value="0"/>
+											<Option name="Vertical" value="1"/>
+										</Property>
+										<Property ClassID="UGS::UICOMP_group" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="ShowLabel" mask="0" name="ShowLabel" sname="ShowLabel" source="1" type="logical" value="True"/>
+										<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+										<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+										<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+										<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+							</PropertyList>
+						</item>
+					</Property>
+					<Property class="UGS::UICOMP_group" hierarchy="UGS::UI::Comp::Explorer" id="explorerNode1" mask="256" name="explorerNode1" presentation="Explorer Node" type="uicomp">
+						<item ContainerItems="1" Expanded="1" IsASubContainer="1" OneElementRule="1" class="UGS::UICOMP_group" hierarchy="" icon="styler_browser_tab_control.bmp" id="explorerNode1" name="explorerNode1" notes="" presentation="Explorer Node" subContainerBrowserName="Explorer Node" type="uicomp">
+							<PropertyList id="id" mode="0">
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="API Name" mask="4112" name="API Name" sname="APIName" source="3" type="string" value="explorerNode1"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Title" mask="1" name="Title" sname="Label" source="1" type="utfstring" value="Node"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Expanded" mask="0" name="Expanded" sname="Expanded" source="2" type="logical" value="True"/>
+								<Property ClassID="UGS::UI::Comp::Container" dynamic="1" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="Members" mask="0" name="Members" sname="Members" source="1" type="array">
+									<PropertyList ClassID="UGS::UI::Comp::Container" Expanded="1" hierarchy="UGS::UICOMP_group" icon="tiles_palette.bmp" id="ContainerItems" mode="1">
+										<Property class="UICOMP_label" hierarchy="UGS::UI::Comp::Explorer" id="stringLabelTool1" mask="256" name="stringLabelTool1" presentation="Label/Bitmap" type="uicomp">
+											<item Expanded="1" class="UICOMP_label" hierarchy="" icon="styler_label.bmp" id="stringLabelTool1" name="stringLabelTool1" notes="" presentation="Label/Bitmap" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="stringLabelTool1"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="HQBitmap" mask="16384" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Icon" mask="128" name="Icon" sname="Bitmap" source="3" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Tooltip" mask="0" name="Tooltip" sname="Tooltip" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="WordWrap" mask="16384" name="WordWrap" sname="WordWrap" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_label" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">																			
+														<Option name="Horizontal" value="0"/>
+														<Option name="Vertical" value="1"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="DisplayBitmapLabel" mask="0" name="DisplayBitmapLabel" sname="DisplayBitmapLabel" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>																				
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Dialog" type="attachment"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="НАЗНАЧЕНЫЙ ИНСТРУМЕНТ"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16640" name="Left" offset="0" sname="Left" source="3" target="separator041" type="attachment"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_integer" hierarchy="UGS::UI::Comp::Explorer" id="integerToolDiam1" mask="256" name="integerToolDiam1" presentation="Integer" type="uicomp">
+											<item Expanded="1" class="UICOMP_integer" hierarchy="UICOMP_double" icon="styler_integer" id="integerToolDiam1" name="integerToolDiam1" notes="" presentation="Integer" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="integerToolDiam1"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="TitleVisibility" mask="0" name="TitleVisibility" sname="TitleVisibility" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="Icon" mask="128" name="Icon" sname="Bitmap" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_value" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="PresentationStyle" mask="16384" name="PresentationStyle" selected="0" sname="PresentationStyle" source="1" type="enum">																																																																																																									
+														<Option name="Keyin" value="0"/>
+														<Option name="Spin" value="1"/>
+														<Option name="Scale" value="2"/>
+														<Option name="ScaleKeyin" value="3"/>
+														<Option name="Combo" value="4"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="UserLockable" mask="69632" name="UserLockable" sname="UserLockable" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="UserLocked" mask="69634" name="UserLocked" sname="UserLocked" source="2" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="PageIncrement" mask="4" name="PageIncrement" sname="PageIncrement" source="1" type="double" value="1e+19"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="LineIncrement" mask="4" name="LineIncrement" sname="LineIncrement" source="1" type="double" value="1e+19"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="ValueVisibility" mask="4" name="ValueVisibility" sname="ShowScaleValue" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="LimitsVisibility" mask="4" name="LimitsVisibility" sname="ScaleLimits" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="MinTitle" mask="4" name="MinTitle" sname="ScaleMinLimitLabel" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="MaxTitle" mask="4" name="MaxTitle" sname="ScaleMaxLimitLabel" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="AdaptiveLimits" mask="4" name="AdaptiveLimits" sname="AdaptiveScaleLimits" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UIFW_spin_options" group="Block Specific::" hierarchy="UGS::UIFW_spin_options" id="Increment" mask="4" name="Increment" sname="Increment" source="1" type="double" value="1"/>
+													<Property ClassID="UGS::UIFW_spin_options" group="Block Specific::" hierarchy="UGS::UIFW_spin_options" id="WrapSpin" mask="4" name="WrapSpin" sname="WrapSpin" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MinInclusive" mask="4" name="MinInclusive" sname="MinInclusive" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MaxInclusive" mask="4" name="MaxInclusive" sname="MaxInclusive" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="RequiredInput" mask="69632" name="RequiredInput" sname="RequiredInput" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="AllowUnassignedValue" mask="69632" name="AllowUnassignedValue" sname="AllowUnassignedValue" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="Value" mask="0" name="Value" sname="Value" source="4" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MaximumValue" mask="0" name="MaximumValue" sname="MaximumValue" source="1" type="integer" value="2147483647"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MinimumValue" mask="0" name="MinimumValue" sname="MinimumValue" source="1" type="integer" value="-2147483648"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_integer" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">																																										
+														<Option name="Horizontal" value="0"/>
+														<Option name="Vertical" value="1"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_integer" data="" dtype="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="ComboOptions" mask="4" name="ComboOptions" size="0" sname="ComboOptions" source="1" type="stlvector"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="диаметр инструмента"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="ReadOnlyValue" mask="16640" name="ReadOnlyValue" sname="ReadOnlyValue" source="1" type="logical" value="True"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_separator" hierarchy="UGS::UI::Comp::Explorer" id="separator0111" mask="256" name="separator0111" presentation="Separator" type="uicomp">
+											<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_multiline_string" icon="styler_separator.bmp" id="separator0111" name="separator0111" notes="" presentation="Separator" type="uicomp">
+												<PropertyList id="id" mode="0"><Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator0111"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_integer" hierarchy="UGS::UI::Comp::Explorer" id="offsetOfTool1" mask="256" name="offsetOfTool1" presentation="Integer" type="uicomp">
+											<item Expanded="1" class="UICOMP_integer" hierarchy="UICOMP_double" icon="styler_integer" id="offsetOfTool1" name="offsetOfTool1" notes="" presentation="Integer" type="uicomp">
+												<PropertyList id="id" mode="0"><Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="offsetOfTool1"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_integer" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="TitleVisibility" mask="0" name="TitleVisibility" sname="TitleVisibility" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="Icon" mask="128" name="Icon" sname="Bitmap" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_value" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="PresentationStyle" mask="16384" name="PresentationStyle" selected="0" sname="PresentationStyle" source="1" type="enum">																					
+														<Option name="Keyin" value="0"/>
+														<Option name="Spin" value="1"/>
+														<Option name="Scale" value="2"/>
+														<Option name="ScaleKeyin" value="3"/>
+														<Option name="Combo" value="4"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="UserLockable" mask="69632" name="UserLockable" sname="UserLockable" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="UserLocked" mask="69634" name="UserLocked" sname="UserLocked" source="2" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="PageIncrement" mask="4" name="PageIncrement" sname="PageIncrement" source="1" type="double" value="1e+19"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="LineIncrement" mask="4" name="LineIncrement" sname="LineIncrement" source="1" type="double" value="1e+19"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="ValueVisibility" mask="4" name="ValueVisibility" sname="ShowScaleValue" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="LimitsVisibility" mask="4" name="LimitsVisibility" sname="ScaleLimits" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="MinTitle" mask="4" name="MinTitle" sname="ScaleMinLimitLabel" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="MaxTitle" mask="4" name="MaxTitle" sname="ScaleMaxLimitLabel" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UIFW_scale_options" id="AdaptiveLimits" mask="4" name="AdaptiveLimits" sname="AdaptiveScaleLimits" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UIFW_spin_options" group="Block Specific::" hierarchy="UGS::UIFW_spin_options" id="Increment" mask="4" name="Increment" sname="Increment" source="1" type="double" value="1"/>
+													<Property ClassID="UGS::UIFW_spin_options" group="Block Specific::" hierarchy="UGS::UIFW_spin_options" id="WrapSpin" mask="4" name="WrapSpin" sname="WrapSpin" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MinInclusive" mask="4" name="MinInclusive" sname="MinInclusive" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MaxInclusive" mask="4" name="MaxInclusive" sname="MaxInclusive" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="RequiredInput" mask="69632" name="RequiredInput" sname="RequiredInput" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_value" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="AllowUnassignedValue" mask="69632" name="AllowUnassignedValue" sname="AllowUnassignedValue" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="Value" mask="0" name="Value" sname="Value" source="4" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MaximumValue" mask="0" name="MaximumValue" sname="MaximumValue" source="1" type="integer" value="2147483647"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="MinimumValue" mask="0" name="MinimumValue" sname="MinimumValue" source="1" type="integer" value="-2147483648"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_integer" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">																					
+														<Option name="Horizontal" value="0"/>
+														<Option name="Vertical" value="1"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_integer" data="" dtype="0" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="ComboOptions" mask="4" name="ComboOptions" size="0" sname="ComboOptions" source="1" type="stlvector"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_integer" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="вылет инстумента"/>
+													<Property ClassID="UGS::UICOMP_integer" group="Block Specific::" hierarchy="UGS::UICOMP_integer" id="ReadOnlyValue" mask="16640" name="ReadOnlyValue" sname="ReadOnlyValue" source="1" type="logical" value="True"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_separator" hierarchy="UGS::UI::Comp::Explorer" id="separator021" mask="256" name="separator021" presentation="Separator" type="uicomp">
+											<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_string" icon="styler_separator.bmp" id="separator021" name="separator021" notes="" presentation="Separator" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="separator021"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_multiline_string" hierarchy="UGS::UI::Comp::Explorer" id="multiline_string011" mask="256" name="multiline_string011" presentation="Multi-line String" type="uicomp">
+											<item Expanded="1" class="UICOMP_multiline_string" hierarchy="UICOMP_separator" icon="styler_browser_multilinetext.bmp" id="multiline_string011" name="multiline_string011" notes="" presentation="Multi-line String" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="multiline_string011"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="HQBitmap" mask="69636" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UI::Comp::BaseString" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="IsPdmString" mask="69636" name="IsPdmString" sname="IsPdmString" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="IsIti" mask="86016" name="IsIti" sname="AllowInternationalTextInput" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Width" mask="16384" name="Width" sname="Width" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MaximumCharactersAccepted" mask="16384" name="MaximumCharactersAccepted" sname="MaximumCharactersAccepted" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_multiline_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+														<Option name="Horizontal" value="0"/>
+														<Option name="Vertical" value="1"/>
+													</Property>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16640" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Sensitivity" mask="256" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MaximumHeight" mask="16640" name="MaximumHeight" sname="MaximumHeight" source="1" type="integer" value="5"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="ResizeHeightWithDialog" mask="16640" name="ResizeHeightWithDialog" sname="ResizeHeightWithDialog" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MinimumHeight" mask="16640" name="MinimumHeight" sname="MinimumHeight" source="1" type="integer" value="1"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Height" mask="16640" name="Height" sname="Height" source="1" type="integer" value="3"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="описание"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Value_1" mask="256" name="Value_1" sname="Value" source="4" type="utfstrings">																					
+														<Strings value="тут должно быть описание инструмента"/>
+													</Property>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_separator" hierarchy="UGS::UI::Comp::Explorer" id="separator031" mask="256" name="separator031" presentation="Separator" type="uicomp">
+											<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_integer" icon="styler_separator.bmp" id="separator031" name="separator031" notes="" presentation="Separator" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator031"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_label" hierarchy="UGS::UI::Comp::Explorer" id="stringLabelHolder1" mask="256" name="stringLabelHolder1" presentation="Label/Bitmap" type="uicomp">
+											<item Expanded="1" class="UICOMP_label" hierarchy="" icon="styler_label.bmp" id="stringLabelHolder1" name="stringLabelHolder1" notes="" presentation="Label/Bitmap" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="stringLabelHolder1"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="HQBitmap" mask="16384" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_label" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Icon" mask="128" name="Icon" sname="Bitmap" source="3" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="Tooltip" mask="0" name="Tooltip" sname="Tooltip" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="WordWrap" mask="16384" name="WordWrap" sname="WordWrap" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_label" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">																					
+														<Option name="Horizontal" value="0"/>
+														<Option name="Vertical" value="1"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_label" group="Block Specific::" hierarchy="UGS::UICOMP_label" id="DisplayBitmapLabel" mask="0" name="DisplayBitmapLabel" sname="DisplayBitmapLabel" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>																				
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_label" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="НАЗНАЧЕНАЯ ОПРАВКА"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Dialog" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16640" name="Left" offset="0" sname="Left" source="3" target="separator041" type="attachment"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_separator" hierarchy="UGS::UI::Comp::Explorer" id="separator041" mask="256" name="separator041" presentation="Separator" type="uicomp">
+											<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_label" icon="styler_separator.bmp" id="separator041" name="separator041" notes="" presentation="Separator" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator041"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_string" hierarchy="UGS::UI::Comp::Explorer" id="stringLibRef11" mask="256" name="stringLibRef11" presentation="String" type="uicomp">
+											<item Expanded="1" class="UICOMP_string" hierarchy="" icon="styler_string.bmp" id="stringLibRef11" name="stringLibRef11" notes="" presentation="String" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="stringLibRef11"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_string" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_string" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_string" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UI::Comp::BaseString" group="Other::" hierarchy="UGS::UICOMP_string" id="IsPdmString" mask="69636" name="IsPdmString" sname="IsPdmString" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="Icon" mask="128" name="Icon" sname="Bitmap" source="3" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_string" group="Other::" hierarchy="UGS::UICOMP_string" id="IsIti" mask="16384" name="IsIti" sname="AllowInternationalTextInput" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_string" group="Other::" hierarchy="UGS::UICOMP_string" id="IsPassword" mask="16384" name="IsPassword" sname="IsPassword" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="WideValue" mask="4" name="WideValue" sname="WideValue" source="4" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="MaxTextLength" mask="16384" name="MaxTextLength" sname="MaxTextLength" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="ListItems" mask="4" name="ListItems" sname="ListItems" source="1" type="utfstrings"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="Tooltip" mask="0" name="Tooltip" sname="Tooltip" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="TrueWidth" mask="86020" name="TrueWidth" sname="TrueWidth" source="1" type="integer" value="-1"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipTexts" mask="2" name="BalloonTooltipTexts" sname="BalloonTooltipTexts" source="1" type="utfstrings"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipImages" mask="2" name="BalloonTooltipImages" sname="BalloonTooltipImages" source="1" type="strings"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="RequiredInput" mask="0" name="RequiredInput" sname="RequiredInput" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16640" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16640" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="Value" mask="0" name="Value" sname="Value" source="4" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_string" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="библиотечкая ссылка"/>
+													<Property ClassID="UGS::UICOMP_string" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="ReadOnlyString" mask="16640" name="ReadOnlyString" sname="ReadOnlyString" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="PresentationStyle" mask="16640" name="PresentationStyle" selected="0" sname="PresentationStyle" source="1" type="enum">																																											
+														<Option name="KeyIn" value="0"/><Option name="Wide" value="1"/>
+														<Option name="List" value="2"/><Option name="Combo" value="3"/><Option name="Autocomplete" value="4"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="Width" mask="16640" name="Width" selected="1" sname="Width" source="1" type="enum">																																												
+														<Option name="Narrow" value="0"/>
+														<Option name="Standard" value="1"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_string" id="BalloonTooltipLayout" mask="256" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">																																												
+														<Option name="Horizontal" value="0"/>
+														<Option name="Vertical" value="1"/>
+													</Property>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_separator" hierarchy="UGS::UI::Comp::Explorer" id="separator051" mask="256" name="separator051" presentation="Separator" type="uicomp">
+											<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_separator" icon="styler_separator.bmp" id="separator051" name="separator051" notes="" presentation="Separator" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator051"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_multiline_string" hierarchy="UGS::UI::Comp::Explorer" id="multiline_string02" mask="256" name="multiline_string02" presentation="Multi-line String" type="uicomp">
+											<item Expanded="1" class="UICOMP_multiline_string" hierarchy="UICOMP_separator" icon="styler_browser_multilinetext.bmp" id="multiline_string02" name="multiline_string02" notes="" presentation="Multi-line String" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="multiline_string02"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="ReadWrite" mask="0" name="ReadWrite" sname="RetainValue" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="HQBitmap" mask="69636" name="HQBitmap" sname="HighQualityBitmap" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UI::Comp::BaseString" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="IsPdmString" mask="69636" name="IsPdmString" sname="IsPdmString" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Other::" hierarchy="UGS::UICOMP_multiline_string" id="IsIti" mask="86016" name="IsIti" sname="AllowInternationalTextInput" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Width" mask="16384" name="Width" sname="Width" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MaximumCharactersAccepted" mask="16384" name="MaximumCharactersAccepted" sname="MaximumCharactersAccepted" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+													<Property ClassID="UGS::UICOMP_multiline_string" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">																												
+														<Option name="Horizontal" value="0"/>
+														<Option name="Vertical" value="1"/>
+													</Property>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Value_1" mask="256" name="Value_1" sname="Value" source="4" type="utfstrings">														
+														<Strings value="тут должно быть описание оправки"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="описание"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16640" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16640" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Sensitivity" mask="256" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MaximumHeight" mask="16640" name="MaximumHeight" sname="MaximumHeight" source="1" type="integer" value="5"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="ResizeHeightWithDialog" mask="16640" name="ResizeHeightWithDialog" sname="ResizeHeightWithDialog" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MinimumHeight" mask="16640" name="MinimumHeight" sname="MinimumHeight" source="1" type="integer" value="1"/>
+													<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Height" mask="16640" name="Height" sname="Height" source="1" type="integer" value="3"/>
+												</PropertyList>
+											</item>
+										</Property>
+										<Property class="UICOMP_separator" hierarchy="UGS::UI::Comp::Explorer" id="separator061" mask="256" name="separator061" presentation="Separator" type="uicomp">
+											<item Expanded="1" class="UICOMP_separator" hierarchy="UICOMP_multiline_string" icon="styler_separator.bmp" id="separator061" name="separator061" notes="" presentation="Separator" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="separator061"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_separator" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+												</PropertyList>														
+											</item>
+										</Property>
+										<Property class="UICOMP_tree_control" hierarchy="UGS::UI::Comp::Explorer" id="tree_control01" mask="256" name="tree_control01" presentation="Tree List" type="uicomp">
+											<item Expanded="1" class="UICOMP_tree_control" hierarchy="UICOMP_separator" icon="styler_tree.bmp" id="tree_control01" name="tree_control01" notes="" presentation="Tree List" type="uicomp">
+												<PropertyList id="id" mode="0">
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="tree_control01"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_tree_control" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+													<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_tree_control" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="MinimumHeight" mask="16384" name="MinimumHeight" sname="MinimumHeight" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="MinimumWidth" mask="16384" name="MinimumWidth" sname="MinimumWidth" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="MaximumHeight" mask="16384" name="MaximumHeight" sname="MaximumHeight" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="MaximumWidth" mask="16384" name="MaximumWidth" sname="MaximumWidth" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ScrollFrozenColumn" mask="0" name="ScrollFrozenColumn" sname="ScrollFrozenColumn" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ShowMultipleColumns" mask="0" name="ShowMultipleColumns" sname="ShowMultipleColumns" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ShowToolTips" mask="0" name="ShowToolTips" sname="ShowToolTips" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ShowExpandCollapseMarker" mask="0" name="ShowExpandCollapseMarker" sname="ShowExpandCollapseMarker" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="SortRootNodes" mask="0" name="SortRootNodes" sname="SortRootNodes" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_tree_control" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="возможные оправки для данного инструмента"/>
+													<Property ClassID="UGS::UICOMP_tree_control" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="SelectionMode" mask="256" name="SelectionMode" selected="2" sname="SelectionMode" source="1" type="enum">															
+														<Option name="None" value="0"/>
+														<Option name="Single" value="1"/>
+														<Option name="Multiple" value="2"/>
+													</Property>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="InitialWidth" mask="16640" name="InitialWidth" sname="Width" source="1" type="integer" value="0"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="CanStretchWidth" mask="16640" name="CanStretchWidth" sname="CanStretchWidth" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="CanStretchHeight" mask="16640" name="CanStretchHeight" sname="CanStretchHeight" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16640" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16640" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ShowHeader" mask="256" name="ShowHeader" sname="ShowHeader" source="1" type="logical" value="True"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="ScrollLineNumber" mask="256" name="ScrollLineNumber" sname="ScrollLineNumber" source="1" type="integer" value="-1"/>
+													<Property ClassID="UGS::UICOMP_tree_control" group="Block Specific::" hierarchy="UGS::UICOMP_tree_control" id="InitialHeight" mask="16640" name="InitialHeight" sname="Height" source="1" type="integer" value="150"/>
+												</PropertyList>
+											</item>
+										</Property>
+									</PropertyList>
+								</Property>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Group" mask="86020" name="Group" sname="Group" source="1" type="logical" value="True"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="2" type="logical" value="False"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+								<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_group" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+								<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_group" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+								<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UICOMP_group" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+								<Property ClassID="UGS::UICOMP_group" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="Column" mask="16384" name="Column" sname="Column" source="1" type="integer" value="1"/>
+								<Property ClassID="UGS::UICOMP_group" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="BalloonTooltipText" mask="0" name="BalloonTooltipText" sname="BalloonTooltipText" source="1" type="utfstring" value=""/>
+								<Property ClassID="UGS::UICOMP_group" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="BalloonTooltipImage" mask="0" name="BalloonTooltipImage" sname="BalloonTooltipImage" source="1" type="string" value=""/>
+								<Property ClassID="UGS::UICOMP_group" brief="0" dynamic="0" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="BalloonTooltipLayout" mask="0" name="BalloonTooltipLayout" selected="0" sname="BalloonTooltipLayout" source="1" type="enum">
+									<Option name="Horizontal" value="0"/>
+									<Option name="Vertical" value="1"/>
+								</Property>
+								<Property ClassID="UGS::UICOMP_group" group="Block Specific::" hierarchy="UGS::UICOMP_group" id="ShowLabel" mask="0" name="ShowLabel" sname="ShowLabel" source="1" type="logical" value="True"/>
+								<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+								<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+								<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+								<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+							</PropertyList>
+						</item>
+					</Property>
+				</PropertyList>
+			</Property>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="explorer"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="Title" mask="1" name="Title" sname="Label" source="1" type="utfstring" value="Explorer"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="HideGroup" mask="69636" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="Focus" mask="69636" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="CanFocus" mask="69636" name="CanFocus" sname="CanFocus" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="KeyboardFocus" mask="69636" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="CanKeyboardFocus" mask="69636" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UI::Comp::Explorer" id="UIOnly" mask="69636" name="UIOnly" sname="RetainValueInUIOnly" source="1" type="logical" value="False"/>
+			<Property ClassID="UGS::UICOMP_widget" group="Other::" hierarchy="UGS::UI::Comp::Explorer" id="Translated" mask="16384" name="Translated" sname="Localize" source="1" type="logical" value="True"/>
+			<Property ClassID="UGS::UI::Comp::Explorer" data="" dtype="0" group="Block Specific::" hierarchy="UGS::UI::Comp::Explorer" id="ExpandedStates" mask="69636" name="ExpandedStates" size="0" sname="ExpandedStates" source="2" type="stlvector"/>
+			<Property ClassID="UGS::UI::Comp::Explorer" group="Block Specific::" hierarchy="UGS::UI::Comp::Explorer" id="Height" mask="69636" name="Height" sname="Height" source="2" type="integer" value="-1"/>
+			<Property ClassID="UGS::UI::Comp::Explorer" group="Block Specific::" hierarchy="UGS::UI::Comp::Explorer" id="Width" mask="69636" name="Width" sname="Width" source="2" type="integer" value="-1"/>
+			<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Top" loc="1" mask="16384" name="Top" offset="0" sname="Top" source="3" target="Default" type="attachment"/>
+			<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Left" loc="2" mask="16384" name="Left" offset="0" sname="Left" source="3" target="Default" type="attachment"/>
+			<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Right" loc="3" mask="16384" name="Right" offset="0" sname="Right" source="3" target="Default" type="attachment"/>
+			<Property ClassID="UGS::UIFW_dialog_layout" group="Other::Attachments::" hierarchy="UGS::UIFW_dialog_layout" id="Bottom" loc="4" mask="16384" name="Bottom" offset="0" sname="Bottom" source="3" target="Default" type="attachment"/>
+			<Property ClassID="UGS::UI::Comp::Explorer" group="Block Specific::" hierarchy="UGS::UI::Comp::Explorer" id="TreeWidth" mask="256" name="TreeWidth" sname="TreeWidth" source="2" type="integer" value="300"/>
+			<Property ClassID="UGS::UI::Comp::Explorer" group="Block Specific::" hierarchy="UGS::UI::Comp::Explorer" id="CurrentNode" mask="256" name="CurrentNode" sname="CurrentNode" source="2" type="integer" value="0"/>
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="Expanded" mask="256" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>		 
+			<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UI::Comp::Explorer" id="Visibility" mask="256" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
+		</PropertyList>
+	</item>
+    <PropertyList id="id" mode="0">
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="Sensitivity" mask="0" name="Sensitivity" sname="Enable" source="1" type="logical" value="True"/>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="HideGroup" mask="4100" name="HideGroup" sname="HideGroup" source="1" type="logical" value="False"/>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="Focus" mask="4100" name="Focus" sname="Focus" source="1" type="logical" value="False"/>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="CanFocus" mask="4100" name="CanFocus" sname="CanFocus" source="1" type="logical" value="True"/>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="KeyboardFocus" mask="4100" name="KeyboardFocus" sname="KeyboardFocus" source="1" type="logical" value="False"/>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="CanKeyboardFocus" mask="4100" name="CanKeyboardFocus" sname="CanKeyboardFocus" source="1" type="logical" value="False"/>
+	    <Property AskForcedBits="0" AskRequiresSetting="0" ClassID="UGS::UICOMP" dynamic="1" group="General::" hierarchy="UGS::Styler::DialogItem" id="CommandSnapToggleMask" mask="4356" name="CommandSnapToggleMask" sname="CommandSnapToggleMask" source="2" type="bits" value="0x298"/>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="Title" mask="256" name="Title" sname="Label" source="1" type="utfstring" value="УПРАВЛЕНИЕ ОПРАВКАМИ"/>
+	    <Property ClassID="UGS::UICOMP" brief="0" dynamic="0" group="General::Other::" hierarchy="UGS::Styler::DialogItem" id="NavigationStyle" mask="393472" name="NavigationStyle" selected="2" sname="Navigation Style" source="1" type="enum">
+			<Option name="OK Cancel" value="0"/>
+			<Option name="Close" value="1"/>
+			<Option name="OK Apply Cancel" value="2"/>
+	    </Property>
+	    <Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::Styler::DialogItem" id="Cue" mask="256" name="Cue" sname="Cue" source="1" type="utfstring" value=""/>
+	    <Property ClassID="UGS::UICOMP" brief="0" dynamic="0" group="General::Other::" hierarchy="UGS::Styler::DialogItem" id="DockPolicy" mask="256" name="DockPolicy" selected="1" sname="Dialog Sizing" source="1" type="enum">
+		  <Option name="Allow Resize" value="0"/>
+		  <Option name="Follow Policy" value="1"/>
+	  </Property>
+    </PropertyList>
+    <AutoGenData>
+	    <PropertyList id="id" mode="0">
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="##43General::" hierarchy="NULL" id="Generate Comment" mask="0" name="Generate Comment" sname="Generate Comment" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="##43General::" hierarchy="NULL" id="Generate Partial Classes" mask="4" name="Generate Partial Classes" sname="Generate Partial Classes" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="##43General::" hierarchy="NULL" id="Generate Block Specific Code" mask="0" name="Generate Block Specific Code" sname="Generate Block Specific Code" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Entry Points::" hierarchy="NULL" id="EPUserEntry" mask="0" name="EPUserEntry" sname="User Exit" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Update" mask="0" name="Update" sname="Update" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Apply" mask="2" name="Apply" sname="Apply" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Close" mask="4" name="Close" sname="Close" source="3" type="logical" value="False"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Initialize" mask="2" name="Initialize" sname="Initialize" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Dialog Shown" mask="0" name="Dialog Shown" sname="Dialog Shown" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Catalog Specific::" hierarchy="NULL" id="Block Name" mask="132" name="Block Name" sname="Block Name" source="3" type="utfstring" value=""/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Catalog Specific::" hierarchy="NULL" id="Block Icon" mask="132" name="Block Icon" sname="Block Icon" source="3" type="string" value="hand"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Catalog Specific::" hierarchy="NULL" id="Catalog Tooltip" mask="132" name="Catalog Tooltip" sname="Catalog Tooltip" source="3" type="utfstring" value="User Defined UI Block"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Catalog Specific::" hierarchy="NULL" id="Catalog Category" mask="132" name="Catalog Category" sname="Catalog Category" source="3" type="utfstring" value="User Defined UI Block"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" brief="0" dynamic="0" group="##43General::" hierarchy="NULL" id="Automation Language" mask="384" name="Automation Language" selected="0" sname="Language" source="3" type="enum">
+			  <Option name="C#" value="0"/>
+			  <Option name="C++" value="1"/>
+			  <Option name="Java" value="2"/>
+			  <Option name="Python" value="4"/>
+			  <Option name="VB.NET" value="5"/>
+			  <Option name="VB.NET for SNAP" value="6"/>
+		  </Property>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Enable OK/Apply Button" mask="256" name="Enable OK/Apply Button" sname="Enable OK/Apply Button" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Focus Notify" mask="256" name="Focus Notify" sname="Focus Notify" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Keyboard Focus Notify" mask="256" name="Keyboard Focus Notify" sname="Keyboard Focus Notify" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Entry Points::" hierarchy="NULL" id="EPCallback" mask="256" name="EPCallback" sname="Callback" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Entry Points::" hierarchy="NULL" id="EPMenu" mask="256" name="EPMenu" sname="Menu" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Filter" mask="256" name="Filter" sname="Filter" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="OK" mask="256" name="OK" sname="OK" source="3" type="logical" value="True"/>
+		  <Property ClassID="Bad Class Id (OM_invalid)" group="Dialog Callbacks::" hierarchy="NULL" id="Cancel" mask="256" name="Cancel" sname="Cancel" source="3" type="logical" value="True"/>
+		</PropertyList>
+    </AutoGenData>
+</Dialog>

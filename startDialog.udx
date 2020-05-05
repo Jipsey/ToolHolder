@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<UserDefinedUIBlockPalette Creator="Sanek" NX="NX 12" Saved="Thu Apr 23 00:24:38 2020
+"><PaletteEntry id="startDialog"><ObjectData class="NewStylerItem"><NewStylerItem><item AutomationClass="startDialog" class="startDialog.dlx" icon="hand"/></NewStylerItem></ObjectData><Presentation category="User Defined UI Block" description="User Defined UI Block" name=""/></PaletteEntry>
+</UserDefinedUIBlockPalette>

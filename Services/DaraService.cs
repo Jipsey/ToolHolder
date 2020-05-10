@@ -17,7 +17,7 @@ public class DataService
     private static UI theUI = null;
     static public ToolHolderDialog _dialog;
     private static Session _theSession = null;
-    static thNXSession data;
+    private thNXSession data;
     private string _path = string.Empty;
     private static Dictionary<NCGroup, List<Operation>> _programmCNC = null;
     private static Operation[] operations;
@@ -40,7 +40,7 @@ public class DataService
         _lw = _theSession.ListingWindow;
         //_dialog.SetVisibleNodes(5);
         data = new thNXSession(_theSession,_ui);
-        _xmlService = new XmlService(data, _dialog);
+        _xmlService = new XmlService(Data, _dialog);
         if (XmlService._tempoXmlDocPath != null)
         _dialog.SetTempoDlxFile(XmlService._tempoXmlDocPath);
         _dialog.buildDialog();
@@ -49,6 +49,11 @@ public class DataService
     public XmlService XMLService
     {
         get { return _xmlService; }
+    }
+
+    public thNXSession Data
+    {
+        get { return data; }
     }
 
 

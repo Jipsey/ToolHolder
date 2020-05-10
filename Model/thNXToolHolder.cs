@@ -38,6 +38,8 @@ namespace ToolHolder_NS.Model
             get { return sectionList; }
         }
 
+        public string RecordType => _recordType;
+
         public thNXToolHolder (string [] generalRec, List <string []> holderRec)
         {
             _holderLibraryReference = generalRec[1];
@@ -54,19 +56,25 @@ namespace ToolHolder_NS.Model
                           && holderRec.All(i => i.Length == 8))
                       sectionList = holderRec;
         }
-        public thNXToolHolder(thNXTool nxTool)
-        {
-            _parentTool = nxTool;
-            _holderLibraryReference = nxTool.Builder.HolderLibraryReference;
-
-            parseByLibRef();
-        }
-
+       // public thNXToolHolder(thNXTool nxTool)
+       // {
+        //    _parentTool = nxTool;
+           // _holderLibraryReference = nxTool.HolderLibraryRef;
+           // parseByLibRef(nxTool);
+        //}
 
 
-        private void parseByLibRef()
-        {
-          //  throw new NotImplementedException();
-        }
+        ///// <summary>
+        ///// метод парсит объект thNXToolHolder 
+        ///// </summary>
+        //private void parseByLibRef(thNXTool nxTool)
+        //{
+        //   //var toolBuilder = nxTool.Builder;
+        //   //_holderLibraryReference = toolBuilder.HolderLibraryReference;
+             
+
+
+
+        //}
     }
 }

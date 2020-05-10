@@ -35,10 +35,16 @@
 //These imports are needed for the following template code
 //------------------------------------------------------------------------------
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using NXOpen;
 using NXOpen.BlockStyler;
+using NXOpen.Features;
+using NXOpen.Utilities;
 using ToolHolder_NS.Model;
+using Group = NXOpen.BlockStyler.Group;
 
 //------------------------------------------------------------------------------
 //Represents Block Styler application class
@@ -69,12 +75,29 @@ public class ToolHolderDialog
     private NXOpen.BlockStyler.MultilineString multiline_string0;// Block type: Multiline String
     private NXOpen.BlockStyler.Separator separator06;// Block type: Separator
     private NXOpen.BlockStyler.Tree tree_control0;// Block type: Tree Control
- 
-   
+
+
+    private List <Group> _explorerNodeList = new List<Group>(); 
+    private List <Label> _stringLabelToolList = new List<Label>() ;
+    private List <DoubleBlock> _doubleToolDiamList = new List<DoubleBlock>();
+    private List <Separator> _separator011List = new List<Separator>() ;
+    private List <IntegerBlock> _offsetOfToolList = new List<IntegerBlock>();
+    private List <Separator> _separator02List = new List<Separator>() ;
+    private List <MultilineString> _multiline_string01List = new List<MultilineString>();
+    private List <Separator> _separator03List = new List<Separator>();
+    private List <Label> _stringLabelHolderList = new List<Label>();
+    private List <Separator> _separator04List = new List<Separator>();
+    private List <StringBlock> _stringLibRef1List = new List<StringBlock>();
+    private List <Separator> _separator05List = new List<Separator>() ;
+    private List <MultilineString> _multiline_string0List = new List<MultilineString>() ;
+    private List <Separator> _separator06List = new List<Separator>();
+    private List <Tree> _tree_control0List = new List<Tree>();
+
+
     private DataService _dataService;
     private string _tempoDlxFilePath;
 
-    //private int _num;
+    private static int cnt = 0;
 
 
     //------------------------------------------------------------------------------
@@ -125,7 +148,11 @@ public class ToolHolderDialog
         theDialog.AddFocusNotifyHandler(new NXOpen.BlockStyler.BlockDialog.FocusNotify(focusNotify_cb));
         theDialog.AddKeyboardFocusNotifyHandler(new NXOpen.BlockStyler.BlockDialog.KeyboardFocusNotify(keyboardFocusNotify_cb));
         theDialog.AddEnableOKButtonHandler(new NXOpen.BlockStyler.BlockDialog.EnableOKButton(enableOKButton_cb));
-        theDialog.AddDialogShownHandler(new NXOpen.BlockStyler.BlockDialog.DialogShown(dialogShown_cb));
+
+     //   foreach (var tree in _tree_control0List)
+     //   {
+            theDialog.AddDialogShownHandler(new NXOpen.BlockStyler.BlockDialog.DialogShown(dialogShown_cb));
+      //  }
 
     }
 
@@ -313,11 +340,13 @@ public class ToolHolderDialog
     {
         if(theDialog != null)
         {
+            DeleteTempoDLXFile();
             theDialog.Dispose();
             theDialog = null;
         }
     }
-    
+
+
 #if CALLBACK
     //------------------------------------------------------------------------------
     //Method name: Show_secondDialog
@@ -354,29 +383,71 @@ public class ToolHolderDialog
     public void initialize_cb()
     {
 
-      
-        string [] arr = _dataService.XMLService.NameArrays;
+        string[] arr = _dataService.XMLService.NameArrays;
+        int toolQnt = _dataService.Data.ToolArray.Length;
+        thNXTool[] tools = _dataService.Data.ToolArray;
+        initArraysOfVariable(toolQnt);
 
         try
         {
             label0 = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock("label0");
             explorer = (NXOpen.BlockStyler.Explorer)theDialog.TopBlock.FindBlock("explorer");
-            explorerNode = (NXOpen.BlockStyler.Group)theDialog.TopBlock.FindBlock("explorerNode");
-            stringLabelTool = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock("stringLabelTool");
-            doubleToolDiam = (NXOpen.BlockStyler.DoubleBlock)theDialog.TopBlock.FindBlock("doubleToolDiam");
-            separator011 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator011");
-            offsetOfTool = (NXOpen.BlockStyler.IntegerBlock)theDialog.TopBlock.FindBlock("offsetOfTool");
-            separator02 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator02");
-            multiline_string01 = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock("multiline_string01");
-            separator03 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator03");
-            stringLabelHolder = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock("stringLabelHolder");
-            separator04 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator04");
-            stringLibRef1 = (NXOpen.BlockStyler.StringBlock)theDialog.TopBlock.FindBlock("stringLibRef1");
-            separator05 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator05");
-            multiline_string0 = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock("multiline_string0");
-            separator06 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator06");
-            tree_control0 = (NXOpen.BlockStyler.Tree)theDialog.TopBlock.FindBlock("tree_control0");
 
+            //"explorerNode",
+            //"stringLabelTool",
+            //"doubleToolDiam",
+            //"separator011",
+            //"offsetOfTool",
+            //"separator02",
+            //"multiline_string01",
+            //"separator03",
+            //"stringLabelHolder",
+            //"separator04",
+            //"stringLibRef1",
+            //"separator05",
+            //"multiline_string0",
+            //"separator06",
+            //"tree_control0",
+
+            for (int i = 0; i < toolQnt; i++)
+            {
+                    string app = i.ToString();
+                    if (i == 0)
+                        app = String.Empty;
+                    _explorerNodeList[i] = (NXOpen.BlockStyler.Group) theDialog.TopBlock.FindBlock(arr[0] + app);
+                    _explorerNodeList[i].Label = String.Format("T{0} - {1}",  tools[i].ToolNumber, tools[i].Tool.Name);
+                    _stringLabelToolList[i] = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock(arr[1] + app);
+                    _doubleToolDiamList[i] =   (NXOpen.BlockStyler.DoubleBlock)theDialog.TopBlock.FindBlock(arr[2] + app);
+                    _separator011List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[3] + app);
+                    _offsetOfToolList[i] = (NXOpen.BlockStyler.IntegerBlock)theDialog.TopBlock.FindBlock(arr[4] + app);
+                    _separator02List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[5] + app);
+                    _multiline_string01List[i] = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock(arr[6] + app);
+                    _separator03List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[7] + app);
+                    _stringLabelHolderList[i] = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock(arr[8] + app);
+                    _separator04List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[9] + app);
+                    _stringLibRef1List[i] = (NXOpen.BlockStyler.StringBlock)theDialog.TopBlock.FindBlock(arr[10] + app);
+                    _separator05List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[11] + app);
+                    _multiline_string0List[i] = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock(arr[12] + app);
+                    _separator06List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[13] + app);
+                    _tree_control0List[i] = (NXOpen.BlockStyler.Tree)theDialog.TopBlock.FindBlock(arr[14] + app);
+            
+
+
+            //explorerNode = (NXOpen.BlockStyler.Group)theDialog.TopBlock.FindBlock("explorerNode");
+            //stringLabelTool = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock("stringLabelTool");
+            //doubleToolDiam = (NXOpen.BlockStyler.DoubleBlock)theDialog.TopBlock.FindBlock("doubleToolDiam");
+            //separator011 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator011");
+            //offsetOfTool = (NXOpen.BlockStyler.IntegerBlock)theDialog.TopBlock.FindBlock("offsetOfTool");
+            //separator02 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator02");
+            //multiline_string01 = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock("multiline_string01");
+            //separator03 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator03");
+            //stringLabelHolder = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock("stringLabelHolder");
+            //separator04 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator04");
+            //stringLibRef1 = (NXOpen.BlockStyler.StringBlock)theDialog.TopBlock.FindBlock("stringLibRef1");
+            //separator05 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator05");
+            //multiline_string0 = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock("multiline_string0");
+            //separator06 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator06");
+            //tree_control0 = (NXOpen.BlockStyler.Tree)theDialog.TopBlock.FindBlock("tree_control0");
 
 
             //------------------------------------------------------------------------------
@@ -384,15 +455,16 @@ public class ToolHolderDialog
             //------------------------------------------------------------------------------
             //tree_control0.SetOnExpandHandler(new NXOpen.BlockStyler.Tree.OnExpandCallback(OnExpandCallback));
             
-            tree_control0.SetOnInsertColumnHandler(new NXOpen.BlockStyler.Tree.OnInsertColumnCallback(OnInsertColumnCallback));
+            //tree_control0.SetOnInsertColumnHandler(new NXOpen.BlockStyler.Tree.OnInsertColumnCallback(OnInsertColumnCallback));
             
             //tree_control0.SetOnInsertNodeHandler(new NXOpen.BlockStyler.Tree.OnInsertNodeCallback(OnInsertNodecallback));
             
             //tree_control0.SetOnDeleteNodeHandler(new NXOpen.BlockStyler.Tree.OnDeleteNodeCallback(OnDeleteNodecallback));
             
             //tree_control0.SetOnPreSelectHandler(new NXOpen.BlockStyler.Tree.OnPreSelectCallback(OnPreSelectcallback));
-            
-            //tree_control0.SetOnSelectHandler(new NXOpen.BlockStyler.Tree.OnSelectCallback(OnSelectcallback));
+
+             _tree_control0List[i].SetOnSelectHandler(new NXOpen.BlockStyler.Tree.OnSelectCallback(OnSelectcallback));
+//           tree_control0.SetOnSelectHandler(new NXOpen.BlockStyler.Tree.OnSelectCallback(OnSelectcallback));
             
             //tree_control0.SetOnStateChangeHandler(new NXOpen.BlockStyler.Tree.OnStateChangeCallback(OnStateChangecallback));
             
@@ -423,7 +495,8 @@ public class ToolHolderDialog
             //tree_control0.SetOnDropMenuHandler(new NXOpen.BlockStyler.Tree.OnDropMenuCallback(OnDropMenuCallback));
             
             //tree_control0.SetOnDefaultActionHandler(new NXOpen.BlockStyler.Tree.OnDefaultActionCallback(OnDefaultActionCallback));
-            
+
+            }
             //------------------------------------------------------------------------------
             //------------------------------------------------------------------------------
             //Registration of StringBlock specific callbacks
@@ -452,7 +525,28 @@ public class ToolHolderDialog
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
     }
-    
+
+    private void initArraysOfVariable(int size)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            _explorerNodeList.Add(new Object() as Group);
+            _stringLabelToolList.Add(new Object() as Label);
+            _doubleToolDiamList.Add(new Object() as DoubleBlock);
+            _separator011List.Add(new Object() as Separator);
+            _offsetOfToolList.Add(new Object() as IntegerBlock);
+            _separator02List.Add(new Object() as Separator);
+            _multiline_string01List.Add(new Object() as MultilineString);
+            _separator03List.Add(new Object() as Separator);
+            _stringLabelHolderList.Add(new Object() as Label);
+            _separator04List.Add(new Object() as Separator);
+            _stringLibRef1List.Add(new Object() as StringBlock);
+            _separator05List.Add(new Object() as Separator);
+            _multiline_string0List.Add(new Object() as MultilineString);
+            _separator06List.Add(new Object() as Separator);
+            _tree_control0List.Add(new Object() as Tree);
+        }
+    }
     //------------------------------------------------------------------------------
     //Callback Name: dialogShown_cb
     //This callback is executed just before the dialog launch. Thus any value set 
@@ -460,19 +554,49 @@ public class ToolHolderDialog
     //------------------------------------------------------------------------------
     public void dialogShown_cb()
     {
+        //GetSelectedObjects();
+
+        int index = explorer.CurrentNode;
+        Tree currenTree = _tree_control0List[index];
+        string text;
+
         try
         {
             //Добавляем колонки
 
-            tree_control0.InsertColumn((int) Columns.First, "название", 200);
-            tree_control0.InsertColumn((int) Columns.Second, "тип", 40);
-            tree_control0.InsertColumn((int)Columns.Third, "длина, мм", 60);
-            tree_control0.InsertColumn((int)Columns.Fourth, "крепеление", 60);
+            Node firstN =  currenTree.RootNode;
+             if(firstN != null)
+            text = firstN.DisplayText;
 
-            tree_control0.SetColumnResizePolicy((int) Columns.First,Tree.ColumnResizePolicy.ConstantWidth);
-            tree_control0.SetColumnResizePolicy((int) Columns.Second,Tree.ColumnResizePolicy.ConstantWidth);
-            tree_control0.SetColumnResizePolicy((int)Columns.Third, Tree.ColumnResizePolicy.ConstantWidth);
-            tree_control0.SetColumnResizePolicy((int)Columns.Fourth, Tree.ColumnResizePolicy.ConstantWidth);
+           
+            //foreach (Tree tree in _tree_control0List)
+            //{
+
+            currenTree.InsertColumn((int)Columns.First, "название", 200);
+            currenTree.InsertColumn((int)Columns.Second, "тип", 40);
+            currenTree.InsertColumn((int)Columns.Third, "длина, мм", 60);
+            currenTree.InsertColumn((int)Columns.Fourth, "крепеление", 60);
+
+            currenTree.SetColumnResizePolicy((int)Columns.First, Tree.ColumnResizePolicy.ConstantWidth);
+            currenTree.SetColumnResizePolicy((int)Columns.Second, Tree.ColumnResizePolicy.ConstantWidth);
+            currenTree.SetColumnResizePolicy((int)Columns.Third, Tree.ColumnResizePolicy.ConstantWidth);
+            currenTree.SetColumnResizePolicy((int)Columns.Fourth, Tree.ColumnResizePolicy.ConstantWidth);
+
+            CreateAndAddNode("test", currenTree);
+            //}
+
+            //tree_control0.InsertColumn((int) Columns.First, "название", 200);
+            //tree_control0.InsertColumn((int) Columns.Second, "тип", 40);
+            //tree_control0.InsertColumn((int)Columns.Third, "длина, мм", 60);
+            //tree_control0.InsertColumn((int)Columns.Fourth, "крепеление", 60);
+
+            //tree_control0.SetColumnResizePolicy((int) Columns.First,Tree.ColumnResizePolicy.ConstantWidth);
+            //tree_control0.SetColumnResizePolicy((int) Columns.Second,Tree.ColumnResizePolicy.ConstantWidth);
+            //tree_control0.SetColumnResizePolicy((int)Columns.Third, Tree.ColumnResizePolicy.ConstantWidth);
+            //tree_control0.SetColumnResizePolicy((int)Columns.Fourth, Tree.ColumnResizePolicy.ConstantWidth);
+
+
+
         }
         catch (Exception ex)
         {
@@ -481,7 +605,7 @@ public class ToolHolderDialog
         }
 
 
-        CreateAndAddNode("test");
+
     }
     
     //------------------------------------------------------------------------------
@@ -695,9 +819,12 @@ public class ToolHolderDialog
     //{
     //}
     
-    //public void OnSelectcallback(NXOpen.BlockStyler.Tree tree, NXOpen.BlockStyler.Node node, int columnID, bool Selected)
-    //{
-    //}
+    public void OnSelectcallback(NXOpen.BlockStyler.Tree tree, NXOpen.BlockStyler.Node node, int columnID, bool Selected)
+    {
+
+
+
+    }
     
     //public void OnStateChangecallback(NXOpen.BlockStyler.Tree tree, NXOpen.BlockStyler.Node node, int State)
     //{
@@ -811,11 +938,11 @@ public class ToolHolderDialog
 
 
 
-    private Node CreateAndAddNode(string libRef)
+    private void CreateAndAddNode(string libRef, Tree tree)
     {
         Node parentNode = null;
-        Node node = tree_control0.CreateNode(libRef);
-
+        Node node = tree.CreateNode(libRef);
+      
         //настройки ноды
         //"turn_holder_hand_left" левый держатель
         //"turn_holder_hand_neutral" нейтральный держатель
@@ -832,21 +959,62 @@ public class ToolHolderDialog
 
 
 
-        node.ForegroundColor = 198;
+        node.ForegroundColor = 108;//198
         node.DisplayIcon = "sm_solid_punch_pierce_face";   //"extrude", "cone", "block", "blend"
         node.SelectedIcon = "sm_solid_punch_tool";
-
-        //вставляем ноды в дерево
         
-        tree_control0.InsertNode(node,parentNode, null,Tree.NodeInsertOption.Sort);
-        node.ScrollTo((int) Columns.First, Node.Scroll.Center);
+        //вставляем ноды в дерево
 
-        return node;
+        tree.InsertNode(node, parentNode, null, Tree.NodeInsertOption.Sort);
+        node.ScrollTo((int) Columns.First, Node.Scroll.Center);
+        cnt++;
     }
 
     public void SetTempoDlxFile(string tempoDlxFilePath)
     {
         _tempoDlxFilePath = tempoDlxFilePath;
+    }
+
+
+    private void DeleteTempoDLXFile()
+    {
+       // throw new NotImplementedException();
+    }
+
+
+    public void GetSelectedObjects()
+    {
+        // Переключимся в режим выбора программ
+        // тэги выделенных объектов переносим в List 
+        try
+        {
+           int x =  explorer.CurrentNode;
+
+            thNXSession._ufs.Cam.InitSession();
+
+            //Ufs.UiOnt.SwitchView(UFUiOnt.TreeMode.Order); // переключаем вид на навигатор операций.
+
+           // Tag tag;
+           // thNXSession._ufs.Draw.AskCurrentDrawing(out tag);
+
+            // Get the selected nodes from the Operation Navigator
+            int selectedCount;
+            Tag[] selectedTags;
+            if (thNXSession._ufs == null) return;
+
+           // thNXSession._ufs.Ui.AskSelObjectList(IntPtr.Zero, out selectedCount, out selectedTags);
+            
+            thNXSession._ufs.UiOnt.AskSelectedNodes(out selectedCount, out selectedTags);
+             var taggedObjects = selectedTags.Select(NXObjectManager.Get).ToList();
+             var objects = taggedObjects.Where(obj => obj is NXOpen.BlockStyler.Group ).ToList();
+            // TaggedObjects = objects;
+        }
+        catch (Exception e)
+        {
+            UI.GetUI()
+                .NXMessageBox.Show("Нет выбраных обектов UI", NXMessageBox.DialogType.Error,
+                    "Для работы программы вы должны выбрать UI элемент NXOpen.BlockStyler.Group !");
+        }
     }
 
 

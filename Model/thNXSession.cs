@@ -16,13 +16,14 @@ namespace ToolHolder_NS.Model
     {
         public Session _innerSession;
         public static Part _workPart;
-        public static UFSession Ufs;
+        public static UFSession _ufs;
         private static string _UGII_CAM_LIBRARY_TOOL_DIR;
         private static string _UGII_CAM_LIBRARY_TOOL_METRIC_DIR;
         private static Operation[] operations;
         private thNXTool [] toolArray;
         public static thNXToolHolder [] _toolHolderArrayFromLibrary;
         private Dictionary<string, thNXToolHolder>  _toolHolderDictionary ; 
+        public static ListingWindow lw ;
        
 
         public thNXSession(Session theSession, UI theUi)
@@ -33,8 +34,8 @@ namespace ToolHolder_NS.Model
             _workPart = theSession.Parts.Work;
             if(_workPart == null) throw new Exception("Не найден открытая деталь!");
 
-            Ufs = UFSession.GetUFSession();
-            if (Ufs == null) throw new Exception("GetUFSession!");
+            _ufs = UFSession.GetUFSession();
+            if (_ufs == null) throw new Exception("GetUFSession!");
 
               _UGII_CAM_LIBRARY_TOOL_DIR = theSession.GetEnvironmentVariableValue("UGII_CAM_LIBRARY_TOOL_DIR");
               if(_UGII_CAM_LIBRARY_TOOL_DIR == null)
@@ -43,10 +44,61 @@ namespace ToolHolder_NS.Model
               if (_UGII_CAM_LIBRARY_TOOL_METRIC_DIR == null)
                   throw new Exception("Не удалось получить путь к библиотеке инструмента(metric)!");
 
+              lw = theSession.ListingWindow;
+
+              lw.Open();
+              var startTime = System.Diagnostics.Stopwatch.StartNew();
+
+
+             lw.WriteLine("Начинаем отсчёт времени выоления метода");
 
               initializeHolderfromLibrary();
 
+              startTime.Stop();
+              var result = startTime.Elapsed;
+
+
+              lw.WriteLine(String.Format("Время работы initializeHolderfromLibrary() {0} секунд ", result.Seconds));
+
+              startTime.Reset();
+              startTime.Start();
+
+              initHolderFromLibraryByStreamReader();
+
+              startTime.Stop();
+              result = startTime.Elapsed;
+
+              lw.WriteLine(String.Format("Время работы initHolderFromLibraryByStreamReader() {0} секунд ", result.Seconds));
+
+
+              startTime.Reset();
+              startTime.Start();
+
               initializeTools();
+
+              startTime.Stop();
+              result = startTime.Elapsed;
+
+              lw.WriteLine(String.Format("Время работы initializeTools() {0} секунд ", result.Seconds));
+
+
+
+        }
+
+        private void initHolderFromLibraryByStreamReader()
+        {
+
+            string holdersFileName = "holder_database.dat";
+            string path = Path.Combine(_UGII_CAM_LIBRARY_TOOL_METRIC_DIR, holdersFileName);
+            string line;
+            if (!File.Exists(Path.Combine(path)))
+                throw new Exception(string.Format("Файл с оправками не существует! \n путь: \"{0}\"", path));
+            using (StreamReader reader = new StreamReader(path))
+            {
+             line =   reader.ReadLine();
+                //.Where(l => !l.StartsWith("#") && l.StartsWith("DATA")).ToArray()
+            }
+
         }
 
         public thNXTool[] ToolArray
@@ -54,10 +106,13 @@ namespace ToolHolder_NS.Model
             get { return toolArray; }
         }
 
-        public Session InnerSession
-        {
-            get { return _innerSession; }
-        }
+        public Dictionary<string, thNXToolHolder> ToolHolderDictionary => _toolHolderDictionary;
+
+
+        //public static UFSession Ufs
+        //{
+        //    get { return _ufs; }
+        //}
 
 
         private void initializeHolderfromLibrary()
@@ -83,7 +138,7 @@ namespace ToolHolder_NS.Model
                     continue;
 
                  string libRef = l[1];
-                 _toolHolderDictionary.Add(libRef, new thNXToolHolder(l, xy.FindAll(i => i.Length == 8 && i[1] == libRef)));
+                 ToolHolderDictionary.Add(libRef, new thNXToolHolder(l, xy.FindAll(i => i.Length == 8 && i[1] == libRef)));
             }
 
             _toolHolderDictionary = holderList.ToArray().ToDictionary(k => k.HolderLibraryReference);

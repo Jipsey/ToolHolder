@@ -14,10 +14,13 @@ namespace ToolHolder_NS.Model
         public int _toolNumber;
         private thNXToolHolder nxToolHolder;
         private double _diam;
+        private double _shankDiam;
         private int _zOffset;
         private string _desc;
         private string _toolName;
+        private string _holderLibref;
         private MillToolBuilder _toolBuilder;
+        private thNXToolHolder[] possibleChoice;
 
         public Tool Tool
         {
@@ -37,7 +40,7 @@ namespace ToolHolder_NS.Model
             {
                 if (_toolBuilder != null)
                 return _toolBuilder ;
-                return null;
+                return createBuilder(_tool);
             }
         }
 
@@ -46,44 +49,118 @@ namespace ToolHolder_NS.Model
             get { return nxToolHolder; }
         }
 
+        public string HolderLibraryRef => _holderLibref;
+
         public thNXTool(Tool tool)
         {
-            initToolBuilder(tool);
+            //createBuilder(tool);
             Tool = tool;
             _toolNumber = setToolNumber();
             _toolName = Tool.Name;
-            _desc = _toolBuilder.TlDescription;
-            _diam = _toolBuilder.TlDiameterBuilder.Value;
+
+            
+            thNXSession._ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DESCRIPTION, value: out _desc);
+            thNXSession._ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DIAMETER, value: out _diam);
+            thNXSession._ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HOLDER_LIBREF, value: out _holderLibref);
+            thNXSession._ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_SHANK_DIA, value: out _shankDiam);
+
+
             _zOffset = determinateZOffset(); 
 
+            thNXSession._ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out _zOffset);
 
-            if (Builder.HolderLibraryReference == null || Builder.HolderLibraryReference.Equals(string.Empty))
+            if (HolderLibraryRef == null || HolderLibraryRef.Equals(string.Empty))
                 nxToolHolder = null;
+            else if (thNXSession._toolHolderArrayFromLibrary.Any(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef)))
+                nxToolHolder = thNXSession._toolHolderArrayFromLibrary
+                       .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef));
 
-            else if ( thNXSession._toolHolderArrayFromLibrary.Any(holder => holder.HolderLibraryReference.Equals(Builder.HolderLibraryReference)))
-                        nxToolHolder = thNXSession._toolHolderArrayFromLibrary
-                               .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(Builder.HolderLibraryReference));
-            else nxToolHolder = new thNXToolHolder(this);
+
+            defineList();
+
+
+
+            //else nxToolHolder = new thNXToolHolder(this);
+            //UFConstants.UF_PARAM_TL_LIBREF;
+            //_desc = _toolBuilder.TlDescription;
+            //_diam = _toolBuilder.TlDiameterBuilder.Value;
+
+
+            // if (Builder.HolderLibraryReference == null || Builder.HolderLibraryReference.Equals(string.Empty))
+            //    nxToolHolder = null;
+
+            //  else if ( thNXSession._toolHolderArrayFromLibrary.Any(holder => holder.HolderLibraryReference.Equals(Builder.HolderLibraryReference)))
+            //              nxToolHolder = thNXSession._toolHolderArrayFromLibrary
+            //                     .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(Builder.HolderLibraryReference));
+            //  else nxToolHolder = new thNXToolHolder(this);
         }
 
-        private void initToolBuilder(Tool tool)
+        private void defineList()
         {
-          _toolBuilder = thNXSession._workPart.CAMSetup.CAMGroupCollection.CreateMillToolBuilder(tool);          
+            List<string> tempList = new List<string>();
+            var tempArr = thNXSession._toolHolderArrayFromLibrary
+                       .Where(holder => holder.RecordType.Equals("1")).ToArray();
+
+
+            string[] collets = determCollet();
+            string[] termoHolder = determTermoHolder();
+            string[] hydroHolders = determHydroHolders();
+            string[] weldonHolder = determWeldonHolders();
+
+            foreach (var itemHolder in tempArr)
+            {
+                
+             if(itemHolder.HolderLibraryReference.Contains("ER8".ToLower()))
+
+
+            }
+
+        }
+
+
+        private string[]  determCollet()
+        {
+            List<string> tempList = new List<string>();
+
+            if(5.0>=_shankDiam && _shankDiam >=1.0)
+                  tempList.Add("ER8");
+            if (7.0 >= _shankDiam && _shankDiam >= 1.0)
+                  tempList.Add("ER11");
+            if (10.0 >= _shankDiam && _shankDiam >= 1.0)
+                  tempList.Add("ER16");
+            if (16.0 >= _shankDiam && _shankDiam >= 1.0)
+                  tempList.Add("ER25");
+            if (20.0 >= _shankDiam && _shankDiam >= 1.0)
+                  tempList.Add("ER32");
+            if (26.0 >= _shankDiam && _shankDiam >= 1.0)
+                  tempList.Add("ER40");
+            return tempList.ToArray();
+
+        }
+
+
+        private MillToolBuilder createBuilder(Tool tool)
+        {
+          return thNXSession._workPart.CAMSetup.CAMGroupCollection.CreateMillToolBuilder(tool);          
         }
 
         private int determinateZOffset()
         {
-           double holderOffset = _toolBuilder.HolderSectionBuilder.TlHolderOffsetBuilder.Value;
-           double length = _toolBuilder.TlHeightBuilder.Value;
-           return (int) (length - holderOffset);
+            //double holderOffset = _toolBuilder.HolderSectionBuilder.TlHolderOffsetBuilder.Value;
+            //double length = _toolBuilder.TlHeightBuilder.Value;
+            double holderOffset;
+            double length ;
+            thNXSession._ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out holderOffset);
+            thNXSession._ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HEIGHT, value: out length);
+
+            return (int) (length - holderOffset);
         }
 
 
         private int setToolNumber()
         {
             int value;
-            thNXSession.
-                Ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_NUMBER, value: out  value);
+            thNXSession._ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_NUMBER, value: out  value);
             return value;
         }
 

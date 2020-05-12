@@ -76,7 +76,7 @@ namespace ToolHolder_NS.Model
                        .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef));
 
 
-            defineList();
+            definePossibleList();
 
 
 
@@ -95,7 +95,7 @@ namespace ToolHolder_NS.Model
             //  else nxToolHolder = new thNXToolHolder(this);
         }
 
-        private void defineList()
+        private void definePossibleList()
         {
             List<string> tempList = new List<string>();
             var tempArr = thNXSession._toolHolderArrayFromLibrary
@@ -103,7 +103,7 @@ namespace ToolHolder_NS.Model
 
 
             string[] collets = determCollet();
-            string[] termoHolder = determTermoHolder();
+            string[] termoHolder = determTermoHolder(tempArr);
             string[] hydroHolders = determHydroHolders();
             string[] weldonHolder = determWeldonHolders();
 
@@ -136,6 +136,21 @@ namespace ToolHolder_NS.Model
                   tempList.Add("ER40");
             return tempList.ToArray();
 
+        }
+
+
+        private string[] determTermoHolder(thNXToolHolder[] tempArr)
+        {
+
+            List<string> tempList = new List<string>();
+           var x =  tempArr.Where(s => s.HolderLibraryReference.ToUpper().Contains("THERMO") 
+                                          && s.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam)).ToList();
+
+           foreach (var thNxToolHolder in x)
+           {
+                tempList.Add(thNxToolHolder.HolderLibraryReference);
+           }
+            return tempList.ToArray();
         }
 
 

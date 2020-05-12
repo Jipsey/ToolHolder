@@ -109,11 +109,6 @@ namespace ToolHolder_NS.Model
         public Dictionary<string, thNXToolHolder> ToolHolderDictionary => _toolHolderDictionary;
 
 
-        //public static UFSession Ufs
-        //{
-        //    get { return _ufs; }
-        //}
-
 
         private void initializeHolderfromLibrary()
         {           

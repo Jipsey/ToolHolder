@@ -117,8 +117,8 @@ public class XmlService
 
         private string _getPathOfProject()
         {
-            string Part_RootPath = _theSession._innerSession.Parts.Display.FullPath;
-            int endIndex = Part_RootPath.LastIndexOf(_theSession._innerSession.Parts.Display.Name + ".prt");
+            string Part_RootPath = _theSession.InnerSession.Parts.Display.FullPath;
+            int endIndex = Part_RootPath.LastIndexOf(_theSession.InnerSession.Parts.Display.Name + ".prt");
 
             return Part_RootPath.Substring(0, endIndex);
         }

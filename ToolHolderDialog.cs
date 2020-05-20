@@ -990,7 +990,7 @@ public class ToolHolderDialog
         {
            int x =  explorer.CurrentNode;
 
-            thNXSession._ufs.Cam.InitSession();
+            thNXSession.Ufs.Cam.InitSession();
 
             //Ufs.UiOnt.SwitchView(UFUiOnt.TreeMode.Order); // переключаем вид на навигатор операций.
 
@@ -1000,11 +1000,11 @@ public class ToolHolderDialog
             // Get the selected nodes from the Operation Navigator
             int selectedCount;
             Tag[] selectedTags;
-            if (thNXSession._ufs == null) return;
+            if (thNXSession.Ufs == null) return;
 
            // thNXSession._ufs.Ui.AskSelObjectList(IntPtr.Zero, out selectedCount, out selectedTags);
             
-            thNXSession._ufs.UiOnt.AskSelectedNodes(out selectedCount, out selectedTags);
+            thNXSession.Ufs.UiOnt.AskSelectedNodes(out selectedCount, out selectedTags);
              var taggedObjects = selectedTags.Select(NXObjectManager.Get).ToList();
              var objects = taggedObjects.Where(obj => obj is NXOpen.BlockStyler.Group ).ToList();
             // TaggedObjects = objects;

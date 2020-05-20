@@ -5,6 +5,8 @@ using System.Security.Cryptography.X509Certificates;
 using NXOpen.CAM;
 using NXOpen.UF;
 using System.Collections.Generic;
+using colletTypeSize = ToolHolder_NS.Model.thNXToolHolder.ColletTypeSize;
+using holderToolMountType = ToolHolder_NS.Model.thNXToolHolder.HolderToolMountType;
 
 namespace ToolHolder_NS.Model
 {
@@ -50,123 +52,194 @@ namespace ToolHolder_NS.Model
         }
 
         public string HolderLibraryRef => _holderLibref;
-
+        /// <summary>
+        /// подумать над тем чтобы конструктор не вызывался на каждой операции, а только если лист не содержит данный инструмент
+        /// </summary>
+        /// <param name="tool"></param>
         public thNXTool(Tool tool)
         {
-            //createBuilder(tool);
+
+           // GetRequiredParams(tool.Tag, operation);
+
             Tool = tool;
             _toolNumber = setToolNumber();
             _toolName = Tool.Name;
 
-            
-            thNXSession._ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DESCRIPTION, value: out _desc);
-            thNXSession._ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DIAMETER, value: out _diam);
-            thNXSession._ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HOLDER_LIBREF, value: out _holderLibref);
-            thNXSession._ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_SHANK_DIA, value: out _shankDiam);
-
+            thNXSession.Ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DESCRIPTION, value: out _desc);
+            thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DIAMETER, value: out _diam);
+            thNXSession.Ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HOLDER_LIBREF, value: out _holderLibref);
+            thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: 7358, value: out _shankDiam);
+            if (_shankDiam == 0)
+                _shankDiam = _diam;
 
             _zOffset = determinateZOffset(); 
 
-            thNXSession._ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out _zOffset);
+            thNXSession.Ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out _zOffset);
 
             if (HolderLibraryRef == null || HolderLibraryRef.Equals(string.Empty))
                 nxToolHolder = null;
-            else if (thNXSession._toolHolderArrayFromLibrary.Any(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef)))
-                nxToolHolder = thNXSession._toolHolderArrayFromLibrary
+            else if (thNXSession._toolHolderDictionary.Values.Any(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef)))
+                nxToolHolder = thNXSession._toolHolderDictionary.Values
                        .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef));
 
-
             definePossibleList();
-
-
-
-            //else nxToolHolder = new thNXToolHolder(this);
-            //UFConstants.UF_PARAM_TL_LIBREF;
-            //_desc = _toolBuilder.TlDescription;
-            //_diam = _toolBuilder.TlDiameterBuilder.Value;
-
-
-            // if (Builder.HolderLibraryReference == null || Builder.HolderLibraryReference.Equals(string.Empty))
-            //    nxToolHolder = null;
-
-            //  else if ( thNXSession._toolHolderArrayFromLibrary.Any(holder => holder.HolderLibraryReference.Equals(Builder.HolderLibraryReference)))
-            //              nxToolHolder = thNXSession._toolHolderArrayFromLibrary
-            //                     .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(Builder.HolderLibraryReference));
-            //  else nxToolHolder = new thNXToolHolder(this);
         }
 
         private void definePossibleList()
         {
             List<string> tempList = new List<string>();
-            var tempArr = thNXSession._toolHolderArrayFromLibrary
+            var tempArr = thNXSession._toolHolderDictionary.Values
                        .Where(holder => holder.RecordType.Equals("1")).ToArray();
 
 
-            string[] collets = determCollet();
-            string[] termoHolder = determTermoHolder(tempArr);
-            string[] hydroHolders = determHydroHolders();
-            string[] weldonHolder = determWeldonHolders();
+            //thNXToolHolder[] collets = determCollet(tempArr);
+            //thNXToolHolder[] termoHolder = determTermoHolder(tempArr);
+            //thNXToolHolder[] hydroHolders = determHydroHolders(tempArr);
+            //thNXToolHolder[] weldonHolders = determWeldonHolders(tempArr);
+            //thNXToolHolder[] datronCollets = determDatronCollets(tempArr);
 
-            foreach (var itemHolder in tempArr)
+             possibleChoice =  parseChoice(tempArr);
+
+        }
+
+        private thNXToolHolder[] parseChoice(thNXToolHolder[] tempArr)
+        {
+
+            List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
+
+            if (5.0>=_shankDiam && _shankDiam >=1.0)
+                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER8).ToArray());
+            if (7.0 >= _shankDiam && _shankDiam >= 1.0)
+                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER11).ToArray());
+            if (10.0 >= _shankDiam && _shankDiam >= 1.0)
+                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER16).ToArray());
+            if (13.0 >= _shankDiam && _shankDiam >= 1.0)
+                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER20).ToArray());
+            if (16.0 >= _shankDiam && _shankDiam >= 1.0)
+                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER25).ToArray());
+            if (20.0 >= _shankDiam && _shankDiam >= 2.0)
+                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER32).ToArray());
+            if (26.0 >= _shankDiam && _shankDiam >= 3.0)
+                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER40).ToArray());
+
+
+            answerArray.AddRange(tempArr.Where(h => (h.HolderToolMountSubType == holderToolMountType.Termo || h.HolderToolMountSubType == holderToolMountType.Weldon
+                                                                        || h.HolderToolMountSubType == holderToolMountType.Hydro || h.HolderToolMountSubType == holderToolMountType.DatronCollet)
+                                                    && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam) || h.HolderLibraryReference.ToUpper().Contains("_" + _shankDiam))).ToList());
+
+            return answerArray.ToArray();
+
+        }
+
+
+
+        private void GetRequiredParams(NXOpen.Tag tag, Operation operation)
+        {
+            if (thNXSession.Ufs == null) return;
+            int cnt;
+            int[] indices;
+
+            thNXSession.Ufs.Param.AskRequiredParams(tag, out cnt, out indices);
+
+            foreach (var index in indices)
             {
+                UFParam.IndexAttribute indexAttribute;
+                UFParam.Status paramStatus;
                 
-             if(itemHolder.HolderLibraryReference.Contains("ER8".ToLower()))
-
-
+                thNXSession.Ufs.Param.AskParamAttributes(index,out indexAttribute);
+                thNXSession.lw.WriteLine(String.Format("номер параметра  {0}; имя атрибута  {1} ", index, indexAttribute.name));
             }
 
+            thNXSession.lw.WriteLine(new string('*',80));
+
+            thNXSession.Ufs.Param.AskRequiredParams(operation.Tag, out cnt, out indices);
+
+            foreach (var index in indices)
+            {
+                UFParam.IndexAttribute indexAttribute;
+                UFParam.Status paramStatus;
+
+                thNXSession.Ufs.Param.AskParamAttributes(index, out indexAttribute);
+                thNXSession.lw.WriteLine(String.Format("номер параметра  {0}; имя атрибута  {1} ", index, indexAttribute.name));
+            }
         }
 
 
-        private string[]  determCollet()
+        private thNXToolHolder[]  determCollet(thNXToolHolder[] tempArr)
         {
-            List<string> tempList = new List<string>();
+            List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
 
-            if(5.0>=_shankDiam && _shankDiam >=1.0)
-                  tempList.Add("ER8");
+
+            if (5.0>=_shankDiam && _shankDiam >=1.0)
+                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER8).ToArray());
             if (7.0 >= _shankDiam && _shankDiam >= 1.0)
-                  tempList.Add("ER11");
+                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER11).ToArray());
             if (10.0 >= _shankDiam && _shankDiam >= 1.0)
-                  tempList.Add("ER16");
+                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER16).ToArray());
+            if (13.0 >= _shankDiam && _shankDiam >= 1.0)
+                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER20).ToArray());
             if (16.0 >= _shankDiam && _shankDiam >= 1.0)
-                  tempList.Add("ER25");
-            if (20.0 >= _shankDiam && _shankDiam >= 1.0)
-                  tempList.Add("ER32");
-            if (26.0 >= _shankDiam && _shankDiam >= 1.0)
-                  tempList.Add("ER40");
-            return tempList.ToArray();
+                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER25).ToArray());
+            if (20.0 >= _shankDiam && _shankDiam >= 2.0)
+                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER32).ToArray());
+            if (26.0 >= _shankDiam && _shankDiam >= 3.0)
+                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER40).ToArray());
 
+            return answerArray.ToArray();
         }
 
 
-        private string[] determTermoHolder(thNXToolHolder[] tempArr)
+        private thNXToolHolder[] determTermoHolder(thNXToolHolder[] tempArr)
+        {
+            List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
+           
+           answerArray.AddRange( tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Termo 
+                                                                && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam) || h.HolderLibraryReference.ToUpper().Contains("_" + _shankDiam))).ToList());
+
+           return answerArray.ToArray();
+        }
+
+        private thNXToolHolder[] determHydroHolders(thNXToolHolder[] tempArr)
+        {
+            List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
+            answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Hydro
+                                                    && (h.Description.ToUpper().Contains("D" + _shankDiam) || h.Description.ToUpper().Contains("_" + _shankDiam))).ToList());
+
+            return answerArray.ToArray();
+        }
+
+        private thNXToolHolder[] determWeldonHolders(thNXToolHolder[] tempArr)
+        {
+            List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
+            answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Weldon && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam) 
+                                                                                                               || h.HolderLibraryReference.ToUpper().Contains("_" + _shankDiam))).ToList());
+
+            return answerArray.ToArray();
+        }
+
+
+        private thNXToolHolder[] determDatronCollets(thNXToolHolder[] tempArr)
         {
 
-            List<string> tempList = new List<string>();
-           var x =  tempArr.Where(s => s.HolderLibraryReference.ToUpper().Contains("THERMO") 
-                                          && s.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam)).ToList();
+            List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
+            answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.DatronCollet && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam)
+                                                                                                               || h.Description.ToUpper().Contains("D" + _shankDiam))).ToList());
 
-           foreach (var thNxToolHolder in x)
-           {
-                tempList.Add(thNxToolHolder.HolderLibraryReference);
-           }
-            return tempList.ToArray();
+            return answerArray.ToArray();
         }
 
 
         private MillToolBuilder createBuilder(Tool tool)
         {
-          return thNXSession._workPart.CAMSetup.CAMGroupCollection.CreateMillToolBuilder(tool);          
+          return thNXSession.WorkPart.CAMSetup.CAMGroupCollection.CreateMillToolBuilder(tool);          
         }
 
         private int determinateZOffset()
         {
-            //double holderOffset = _toolBuilder.HolderSectionBuilder.TlHolderOffsetBuilder.Value;
-            //double length = _toolBuilder.TlHeightBuilder.Value;
             double holderOffset;
             double length ;
-            thNXSession._ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out holderOffset);
-            thNXSession._ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HEIGHT, value: out length);
+            thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out holderOffset);
+            thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HEIGHT, value: out length);
 
             return (int) (length - holderOffset);
         }
@@ -175,7 +248,7 @@ namespace ToolHolder_NS.Model
         private int setToolNumber()
         {
             int value;
-            thNXSession._ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_NUMBER, value: out  value);
+            thNXSession.Ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_NUMBER, value: out  value);
             return value;
         }
 

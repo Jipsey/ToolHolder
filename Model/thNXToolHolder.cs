@@ -81,7 +81,7 @@ namespace ToolHolder_NS.Model
             _maxOFfset = generalRec[6].Trim();
             _minDia = generalRec[7].Trim();
             _maxDia = generalRec[8].Trim();
-            _description = enc(generalRec[9].Trim());
+            _description = generalRec[9].Trim();                    //enc(generalRec[9].Trim());
 
             if ( holderRec.All(hr => Convert.ToInt32(hr[2]) == 2) 
                           && holderRec.All(i => i.Length == 8))

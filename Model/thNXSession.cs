@@ -174,7 +174,9 @@ namespace ToolHolder_NS.Model
 
             _toolHolderDictionary = holderList.ToArray().ToDictionary(k => k.HolderLibraryReference);
         }
-
+        /// <summary>
+        /// парсит список инструмента
+        /// </summary>
         private void initializeTools()
         {
             List <thNXTool> list = new  List <thNXTool> ();
@@ -195,6 +197,12 @@ namespace ToolHolder_NS.Model
            
             list.Sort();
             toolArray = list.ToArray();
+
+            if (toolArray != null)
+                foreach (var element in toolArray)
+                {
+                    element.definePossibleList();
+                }
 
             initToolCarrier();
 

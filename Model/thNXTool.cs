@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using NXOpen.CAM;
 using NXOpen.UF;
 using System.Collections.Generic;
+using System.Text;
 using colletTypeSize = ToolHolder_NS.Model.thNXToolHolder.ColletTypeSize;
 using holderToolMountType = ToolHolder_NS.Model.thNXToolHolder.HolderToolMountType;
 
@@ -64,8 +65,7 @@ namespace ToolHolder_NS.Model
             Tool = tool;
             _toolNumber = setToolNumber();
             _toolName = Tool.Name;
-
-            thNXSession.Ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DESCRIPTION, value: out _desc);
+            thNXSession.Ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DESCRIPTION, value: out var value );
             thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DIAMETER, value: out _diam);
             thNXSession.Ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HOLDER_LIBREF, value: out _holderLibref);
             thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: 7358, value: out _shankDiam);
@@ -82,23 +82,24 @@ namespace ToolHolder_NS.Model
                 nxToolHolder = thNXSession._toolHolderDictionary.Values
                        .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef));
 
-            definePossibleList();
+            _desc = enc(value);
+
+            //definePossibleList();
         }
 
-        private void definePossibleList()
-        {
+        public void definePossibleList()
+        {//TODO стоит переделать логику, чтобы не парсить временный список с основной инофой оправок, а сразу сделать его в объекте сессии
             List<string> tempList = new List<string>();
             var tempArr = thNXSession._toolHolderDictionary.Values
                        .Where(holder => holder.RecordType.Equals("1")).ToArray();
-
 
             //thNXToolHolder[] collets = determCollet(tempArr);
             //thNXToolHolder[] termoHolder = determTermoHolder(tempArr);
             //thNXToolHolder[] hydroHolders = determHydroHolders(tempArr);
             //thNXToolHolder[] weldonHolders = determWeldonHolders(tempArr);
             //thNXToolHolder[] datronCollets = determDatronCollets(tempArr);
-
-             possibleChoice =  parseChoice(tempArr);
+            if(possibleChoice is null)
+                 possibleChoice =  parseChoice(tempArr);
 
         }
 
@@ -128,7 +129,6 @@ namespace ToolHolder_NS.Model
                                                     && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam) || h.HolderLibraryReference.ToUpper().Contains("_" + _shankDiam))).ToList());
 
             return answerArray.ToArray();
-
         }
 
 
@@ -274,6 +274,13 @@ namespace ToolHolder_NS.Model
                 return ToolNumber.CompareTo(nxTool.ToolNumber);
           
                 throw  new Exception("Невозможно сравнить два объекта!");
+        }
+
+
+        private string enc(string entryDesc)
+        {
+             return Encoding.UTF8.GetString(Encoding.Default.GetBytes(entryDesc));
+            //return Encoding.Default.GetString(Encoding.GetEncoding(Encoding.Default.CodePage).GetBytes(entryDesc));
         }
     }
 }

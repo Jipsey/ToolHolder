@@ -594,9 +594,6 @@ public class ToolHolderDialog
             //tree_control0.SetColumnResizePolicy((int) Columns.Second,Tree.ColumnResizePolicy.ConstantWidth);
             //tree_control0.SetColumnResizePolicy((int)Columns.Third, Tree.ColumnResizePolicy.ConstantWidth);
             //tree_control0.SetColumnResizePolicy((int)Columns.Fourth, Tree.ColumnResizePolicy.ConstantWidth);
-
-
-
         }
         catch (Exception ex)
         {
@@ -940,8 +937,10 @@ public class ToolHolderDialog
 
     private void CreateAndAddNode(string libRef, Tree tree)
     {
+        var x = cnt;
         Node parentNode = null;
         Node node = tree.CreateNode(libRef);
+     
       
         //настройки ноды
         //"turn_holder_hand_left" левый держатель
@@ -964,8 +963,14 @@ public class ToolHolderDialog
         node.SelectedIcon = "sm_solid_punch_tool";
         
         //вставляем ноды в дерево
+        
 
         tree.InsertNode(node, parentNode, null, Tree.NodeInsertOption.Sort);
+
+        node.SetColumnDisplayText(1, "HELLO WORLD!!");
+        node.SetColumnDisplayText(2,"HELLO WORLD_2!");
+        node.SetColumnDisplayText(3, "HELLO WORLD_3!");
+
         node.ScrollTo((int) Columns.First, Node.Scroll.Center);
         cnt++;
     }

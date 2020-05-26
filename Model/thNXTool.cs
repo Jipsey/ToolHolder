@@ -7,7 +7,6 @@ using NXOpen.UF;
 using System.Collections.Generic;
 using System.Text;
 using colletTypeSize = ToolHolder_NS.Model.thNXToolHolder.ColletTypeSize;
-using holderToolMountType = ToolHolder_NS.Model.thNXToolHolder.HolderToolMountType;
 
 namespace ToolHolder_NS.Model
 {
@@ -53,6 +52,9 @@ namespace ToolHolder_NS.Model
         }
 
         public string HolderLibraryRef => _holderLibref;
+
+        public thNXToolHolder[] PossibleChoice => possibleChoice;
+
         /// <summary>
         /// подумать над тем чтобы конструктор не вызывался на каждой операции, а только если лист не содержит данный инструмент
         /// </summary>
@@ -98,7 +100,7 @@ namespace ToolHolder_NS.Model
             //thNXToolHolder[] hydroHolders = determHydroHolders(tempArr);
             //thNXToolHolder[] weldonHolders = determWeldonHolders(tempArr);
             //thNXToolHolder[] datronCollets = determDatronCollets(tempArr);
-            if(possibleChoice is null)
+            if(PossibleChoice is null)
                  possibleChoice =  parseChoice(tempArr);
 
         }
@@ -109,23 +111,23 @@ namespace ToolHolder_NS.Model
             List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
 
             if (5.0>=_shankDiam && _shankDiam >=1.0)
-                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER8).ToArray());
+                answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER8).ToArray());
             if (7.0 >= _shankDiam && _shankDiam >= 1.0)
-                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER11).ToArray());
+                answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER11).ToArray());
             if (10.0 >= _shankDiam && _shankDiam >= 1.0)
-                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER16).ToArray());
+                answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER16).ToArray());
             if (13.0 >= _shankDiam && _shankDiam >= 1.0)
-                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER20).ToArray());
+                answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER20).ToArray());
             if (16.0 >= _shankDiam && _shankDiam >= 1.0)
-                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER25).ToArray());
+                answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER25).ToArray());
             if (20.0 >= _shankDiam && _shankDiam >= 2.0)
-                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER32).ToArray());
+                answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER32).ToArray());
             if (26.0 >= _shankDiam && _shankDiam >= 3.0)
-                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER40).ToArray());
+                answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER40).ToArray());
 
 
-            answerArray.AddRange(tempArr.Where(h => (h.HolderToolMountSubType == holderToolMountType.Termo || h.HolderToolMountSubType == holderToolMountType.Weldon
-                                                                        || h.HolderToolMountSubType == holderToolMountType.Hydro || h.HolderToolMountSubType == holderToolMountType.DatronCollet)
+            answerArray.AddRange(tempArr.Where(h => (h.HolderSubType == thNXToolHolder.HolderType.Termo || h.HolderSubType == thNXToolHolder.HolderType.Weldon
+                                                                                                        || h.HolderSubType == thNXToolHolder.HolderType.Hydro || h.HolderSubType == thNXToolHolder.HolderType.DatronCollet)
                                                     && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam) || h.HolderLibraryReference.ToUpper().Contains("_" + _shankDiam))).ToList());
 
             return answerArray.ToArray();
@@ -171,19 +173,19 @@ namespace ToolHolder_NS.Model
 
 
             if (5.0>=_shankDiam && _shankDiam >=1.0)
-                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER8).ToArray());
+                  answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER8).ToArray());
             if (7.0 >= _shankDiam && _shankDiam >= 1.0)
-                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER11).ToArray());
+                  answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER11).ToArray());
             if (10.0 >= _shankDiam && _shankDiam >= 1.0)
-                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER16).ToArray());
+                  answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER16).ToArray());
             if (13.0 >= _shankDiam && _shankDiam >= 1.0)
-                answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER20).ToArray());
+                answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER20).ToArray());
             if (16.0 >= _shankDiam && _shankDiam >= 1.0)
-                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER25).ToArray());
+                  answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER25).ToArray());
             if (20.0 >= _shankDiam && _shankDiam >= 2.0)
-                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER32).ToArray());
+                  answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER32).ToArray());
             if (26.0 >= _shankDiam && _shankDiam >= 3.0)
-                  answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Collet && h.ColletSize == colletTypeSize.ER40).ToArray());
+                  answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Collet && h.ColletSize == colletTypeSize.ER40).ToArray());
 
             return answerArray.ToArray();
         }
@@ -193,7 +195,7 @@ namespace ToolHolder_NS.Model
         {
             List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
            
-           answerArray.AddRange( tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Termo 
+           answerArray.AddRange( tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Termo 
                                                                 && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam) || h.HolderLibraryReference.ToUpper().Contains("_" + _shankDiam))).ToList());
 
            return answerArray.ToArray();
@@ -202,7 +204,7 @@ namespace ToolHolder_NS.Model
         private thNXToolHolder[] determHydroHolders(thNXToolHolder[] tempArr)
         {
             List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
-            answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Hydro
+            answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Hydro
                                                     && (h.Description.ToUpper().Contains("D" + _shankDiam) || h.Description.ToUpper().Contains("_" + _shankDiam))).ToList());
 
             return answerArray.ToArray();
@@ -211,8 +213,8 @@ namespace ToolHolder_NS.Model
         private thNXToolHolder[] determWeldonHolders(thNXToolHolder[] tempArr)
         {
             List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
-            answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.Weldon && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam) 
-                                                                                                               || h.HolderLibraryReference.ToUpper().Contains("_" + _shankDiam))).ToList());
+            answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.Weldon && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam) 
+                                                                                                            || h.HolderLibraryReference.ToUpper().Contains("_" + _shankDiam))).ToList());
 
             return answerArray.ToArray();
         }
@@ -222,8 +224,8 @@ namespace ToolHolder_NS.Model
         {
 
             List<thNXToolHolder> answerArray = new List<thNXToolHolder>();
-            answerArray.AddRange(tempArr.Where(h => h.HolderToolMountSubType == holderToolMountType.DatronCollet && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam)
-                                                                                                               || h.Description.ToUpper().Contains("D" + _shankDiam))).ToList());
+            answerArray.AddRange(tempArr.Where(h => h.HolderSubType == thNXToolHolder.HolderType.DatronCollet && (h.HolderLibraryReference.ToUpper().Contains("D" + _shankDiam)
+                                                                                                                  || h.Description.ToUpper().Contains("D" + _shankDiam))).ToList());
 
             return answerArray.ToArray();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using NXOpen;
@@ -29,10 +30,12 @@ namespace ToolHolder_NS.Model
         private double _cornerRadius;
         private double _offset;
         private List<string[]> sectionList;
-        private HolderToolMountType _holderToolMountSubType ;
+        private HolderType _holderSubType ;
+        private HolderSpindelMountType _holderSpindelMount;
         private ColletTypeSize _colletSize;
+        private double _length;
 
-        public enum HolderToolMountType
+        public enum HolderType
         {  Collet = 0,
            Termo = 1,
            DatronCollet = 2,
@@ -53,6 +56,16 @@ namespace ToolHolder_NS.Model
             unknown = 10
         }
 
+        public enum HolderSpindelMountType
+        {
+            SK40 = 0,
+            HSK63A = 1,
+            DatronSpindel = 2,
+            Capto4 = 3,
+            Capto6 = 4,
+            Unknown = 5
+        }
+
         public string HolderLibraryReference
         {
             get { return _holderLibraryReference; }
@@ -67,9 +80,13 @@ namespace ToolHolder_NS.Model
 
         public string Description => _description;
 
-        public HolderToolMountType HolderToolMountSubType => _holderToolMountSubType;
+        public HolderType HolderSubType => _holderSubType;
 
         public ColletTypeSize ColletSize => _colletSize;
+
+        public double Length => _length;
+
+        public HolderSpindelMountType HolderSpindelMount => _holderSpindelMount;
 
         public thNXToolHolder (string [] generalRec, List <string []> holderRec)
         {
@@ -87,16 +104,17 @@ namespace ToolHolder_NS.Model
                           && holderRec.All(i => i.Length == 8))
                       sectionList = holderRec;
 
-            initholderToolMountType();
-            
+            InitHolderType();
+            InitSpindelMountType();
+            CalcLength();
         }
 
-        private void initholderToolMountType()
+        private void InitHolderType()
         {
             if (_description.ToUpper().Contains("ЦАНГОВЫЙ"))
             {
-                _holderToolMountSubType = HolderToolMountType.Collet;
-                initColletSize();
+                _holderSubType = HolderType.Collet;
+                InitColletSize();
                 return;
             }
 
@@ -104,32 +122,32 @@ namespace ToolHolder_NS.Model
             if (_holderLibraryReference.ToUpper().Contains("THERMO") || _holderLibraryReference.ToUpper().Contains("TERM") || _holderLibraryReference.ToUpper().Contains("CELSIO") 
                                                                      || (_holderLibraryReference.ToUpper().Contains("GARANT") && _holderLibraryReference.Contains("ТЕРМОЗАЖИМНОЙ")))
             {
-                _holderToolMountSubType = HolderToolMountType.Termo;
+                _holderSubType = HolderType.Termo;
                 return;
             }
 
             if (_holderLibraryReference.ToUpper().Contains("HYDRO") || _description.ToUpper().Contains("TENDOZERO"))
             {
-                _holderToolMountSubType = HolderToolMountType.Hydro;
+                _holderSubType = HolderType.Hydro;
                 return;
             }
 
             if ( _description.ToUpper().Contains("DATRON"))
             {
-                _holderToolMountSubType = HolderToolMountType.DatronCollet;
+                _holderSubType = HolderType.DatronCollet;
                 return;
             }
 
             if (_description.ToUpper().Contains("WELDON"))
             {
-                _holderToolMountSubType = HolderToolMountType.Weldon;
+                _holderSubType = HolderType.Weldon;
                 return;
             }
 
-            _holderToolMountSubType = HolderToolMountType.Unknown;
+            _holderSubType = HolderType.Unknown;
         }
 
-        private void initColletSize()
+        private void InitColletSize()
         {
             int startIndex;
 
@@ -176,6 +194,33 @@ namespace ToolHolder_NS.Model
                     _colletSize = ColletTypeSize.unknown;
                     break;
             }
+        }
+
+        private void InitSpindelMountType()
+        {
+            string refer = _holderLibraryReference.ToUpper();
+            _holderSpindelMount = refer.Contains("SK40") || _description.Contains("SK40") || _description.Contains("D'ANDREA")  ? HolderSpindelMountType.SK40 :
+                refer.Contains("HSK-A_63") || _description.Contains("HSK-A_63") ?  HolderSpindelMountType.SK40 :
+                    _description.Contains("DATRON") || _description.Contains("DATRON") ? HolderSpindelMountType.DatronSpindel :
+                         refer.Contains("C4") || _description.Contains("C4") ? HolderSpindelMountType.Capto4 :
+                              refer.Contains("C6") || _description.Contains("C6") ?  HolderSpindelMountType.Capto6 :
+                                  HolderSpindelMountType.Unknown;
+        }
+
+        private void CalcLength()
+        {
+            if (SectionList is null)
+                return;
+
+            double answer = 0;
+            foreach (var item in SectionList)
+            {
+                string s = item[5].Trim();
+                IFormatProvider formatter = new NumberFormatInfo { NumberDecimalSeparator = "." };
+                answer += Double.Parse(s, formatter);
+            }
+
+            _length = answer;
         }
 
 

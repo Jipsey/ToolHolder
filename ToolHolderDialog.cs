@@ -96,6 +96,7 @@ public class ToolHolderDialog
 
     private DataService _dataService;
     private string _tempoDlxFilePath;
+    private thNXTool currentTool;
 
     private static int cnt = 0;
 
@@ -494,7 +495,7 @@ public class ToolHolderDialog
             
             //tree_control0.SetOnDropMenuHandler(new NXOpen.BlockStyler.Tree.OnDropMenuCallback(OnDropMenuCallback));
             
-            //tree_control0.SetOnDefaultActionHandler(new NXOpen.BlockStyler.Tree.OnDefaultActionCallback(OnDefaultActionCallback));
+            _tree_control0List[i].SetOnDefaultActionHandler(new NXOpen.BlockStyler.Tree.OnDefaultActionCallback(OnDefaultActionCallback));
 
             }
             //------------------------------------------------------------------------------
@@ -558,9 +559,9 @@ public class ToolHolderDialog
 
         int index = explorer.CurrentNode;
         Tree currenTree = _tree_control0List[index];
-        thNXTool nxTool = _dataService.Data.ToolArray[index];
+        currentTool = _dataService.Data.ToolArray[index];
 
-        if (nxTool.PossibleChoice.Length == 0 || nxTool.PossibleChoice == null)
+        if (currentTool.PossibleChoice.Length == 0 || currentTool.PossibleChoice == null)
             return;
 
         try
@@ -587,7 +588,7 @@ public class ToolHolderDialog
             currenTree.SetColumnResizePolicy((int)Columns.Descr, Tree.ColumnResizePolicy.ResizeWithContents);
 
 
-            CreateAndAddNode(nxTool, currenTree);
+            CreateAndAddNode(currentTool, currenTree);
             //}
 
             //tree_control0.InsertColumn((int) Columns.Name, "название", 200);
@@ -884,9 +885,11 @@ public class ToolHolderDialog
     //{
     //}
     
-    //public void OnDefaultActionCallback(NXOpen.BlockStyler.Tree tree, NXOpen.BlockStyler.Node node, int columnID)
-    //{
-    //}
+    public void OnDefaultActionCallback(NXOpen.BlockStyler.Tree tree, NXOpen.BlockStyler.Node node, int columnID)
+    {// TODO реализовать метод вызываемый двойным шечком
+
+        var x = currentTool;
+    }
     
     //------------------------------------------------------------------------------
     //StringBlock specific callbacks

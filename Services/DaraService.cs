@@ -44,6 +44,7 @@ public class DataService
         if (XmlService._tempoXmlDocPath != null)
         _dialog.SetTempoDlxFile(XmlService._tempoXmlDocPath);
         _dialog.buildDialog();
+        
     }
 
     public XmlService XMLService

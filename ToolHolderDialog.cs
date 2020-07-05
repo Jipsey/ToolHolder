@@ -387,7 +387,6 @@ public class ToolHolderDialog
         string[] arr = _dataService.XMLService.NameArrays;
         int toolQnt = _dataService.Data.ToolArray.Length;
         thNXTool[] tools = _dataService.Data.ToolArray;
-        thNXTool localTool;
         initArraysOfVariable(toolQnt);
 
         try
@@ -433,27 +432,7 @@ public class ToolHolderDialog
                     _separator06List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[13] + app);
                     _tree_control0List[i] = (NXOpen.BlockStyler.Tree)theDialog.TopBlock.FindBlock(arr[14] + app);
 
-
-
-                   // localTool = tools[i];
-                   // if (localTool != null && localTool.NxToolHolder != null)
-
-                        try
-                        {
-                            //заполняем поля описания опарвки, инсутремнта и др.
-
-                            _doubleToolDiamList[i].Value = tools[i].Diam;// диаметр инструмента
-                            _offsetOfToolList[i].Value = tools[i].ZOffset;//  вылет инструмента
-                            GUItoolDescriptionList[i].SetValue(new string[]{ tools[i].Desc});// tool descr
-                            _stringLibRef1List[i].Value = tools[i].HolderLibraryRef;// HolderLibRef
-                            GUItoolHolderDescriptionList[i].SetValue(new []{ tools[i].CurrentToolHolderDescr});// toolHolder descr
-                            //refreshGUIValues();
-                        }
-                        catch (Exception ex)
-                        {
-                            theUI.NXMessageBox.Show("Ошибка при заполнении полей описания и Libref оправки и инструмента", NXMessageBox.DialogType.Error, ex.ToString());
-                        }
-
+                            fillDialog(i);
 
                     //explorerNode = (NXOpen.BlockStyler.Group)theDialog.TopBlock.FindBlock("explorerNode");
                     //stringLabelTool = (NXOpen.BlockStyler.Label)theDialog.TopBlock.FindBlock("stringLabelTool");
@@ -544,7 +523,26 @@ public class ToolHolderDialog
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
     }
-
+    /// <summary>
+    /// заполняем поля описания опарвки, инсутремнта и др.
+    /// </summary>
+    /// <param name="index"></param>
+    private void fillDialog(int index)
+    {
+        try
+        {
+            var tools = _dataService.Data.ToolArray;
+            _doubleToolDiamList[index].Value = tools[index].Diam;// диаметр инструмента
+            _offsetOfToolList[index].Value = tools[index].ZOffset;//  вылет инструмента
+            GUItoolDescriptionList[index].SetValue(new string[] { tools[index].Desc });// tool descr
+            _stringLibRef1List[index].Value = tools[index].HolderLibraryRef;// HolderLibRef
+            GUItoolHolderDescriptionList[index].SetValue(new[] { tools[index].CurrentToolHolderDescr });// toolHolder descr
+        }
+        catch (Exception ex)
+        {
+            theUI.NXMessageBox.Show("Ошибка при заполнении полей описания и Libref оправки и инструмента", NXMessageBox.DialogType.Error, ex.ToString());
+        }
+    }
     private void initArraysOfVariable(int size)
     {
         for (int i = 0; i < size; i++)
@@ -579,10 +577,11 @@ public class ToolHolderDialog
         Tree currenTree = _tree_control0List[index];
         _currentTool = _dataService.Data.ToolArray[index];
 
+      //  fillDialog(_currentTool.ToolNumber);
 
         if (_currentTool.PossibleChoice.Length == 0 || _currentTool.PossibleChoice == null)
             return;
-
+        
         try
         {
             //Добавляем колонки
@@ -625,9 +624,6 @@ public class ToolHolderDialog
 
             theUI.NXMessageBox.Show("Ошибка при создании колонок с возможными оправками", NXMessageBox.DialogType.Error, ex.ToString());
         }
-
-
-
     }
     
     //------------------------------------------------------------------------------
@@ -922,6 +918,9 @@ public class ToolHolderDialog
        
 
         _currentTool.setToolHolder(node.DisplayText);
+
+        fillDialog(_currentTool.ToolNumber - 1);
+        
     }
     
     //------------------------------------------------------------------------------

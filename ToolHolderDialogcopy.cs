@@ -72,7 +72,7 @@ public class ToolHolderDialog
     private NXOpen.BlockStyler.Separator separator04;// Block type: Separator
     private NXOpen.BlockStyler.StringBlock stringLibRef1;// Block type: String
     private NXOpen.BlockStyler.Separator separator05;// Block type: Separator
-    private NXOpen.BlockStyler.MultilineString GUItoolHolderDescription;// Block type: Multiline String
+    private NXOpen.BlockStyler.MultilineString multiline_string0;// Block type: Multiline String
     private NXOpen.BlockStyler.Separator separator06;// Block type: Separator
     private NXOpen.BlockStyler.Tree tree_control0;// Block type: Tree Control
 
@@ -89,7 +89,7 @@ public class ToolHolderDialog
     private List <Separator> _separator04List = new List<Separator>();
     private List <StringBlock> _stringLibRef1List = new List<StringBlock>();
     private List <Separator> _separator05List = new List<Separator>() ;
-    private List <MultilineString> GUItoolHolderDescriptionList = new List<MultilineString>() ;
+    private List <MultilineString> _multiline_string0List = new List<MultilineString>() ;
     private List <Separator> _separator06List = new List<Separator>();
     private List <Tree> _tree_control0List = new List<Tree>();
 
@@ -407,7 +407,7 @@ public class ToolHolderDialog
             //"separator04",
             //"stringLibRef1",
             //"separator05",
-            //"GUItoolHolderDescription",
+            //"multiline_string0",
             //"separator06",
             //"tree_control0",
 
@@ -429,24 +429,24 @@ public class ToolHolderDialog
                     _separator04List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[9] + app);
                     _stringLibRef1List[i] = (NXOpen.BlockStyler.StringBlock)theDialog.TopBlock.FindBlock(arr[10] + app);
                     _separator05List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[11] + app);
-                    GUItoolHolderDescriptionList[i] = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock(arr[12] + app);
+                    _multiline_string0List[i] = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock(arr[12] + app);
                     _separator06List[i] = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock(arr[13] + app);
                     _tree_control0List[i] = (NXOpen.BlockStyler.Tree)theDialog.TopBlock.FindBlock(arr[14] + app);
 
 
 
-                   // localTool = tools[i];
-                   // if (localTool != null && localTool.NxToolHolder != null)
+                    localTool = tools[i];
+                    if (localTool != null)
 
                         try
                         {
                             //заполняем поля описания опарвки, инсутремнта и др.
 
-                            _doubleToolDiamList[i].Value = tools[i].Diam;// диаметр инструмента
-                            _offsetOfToolList[i].Value = tools[i].ZOffset;//  вылет инструмента
-                            GUItoolDescriptionList[i].SetValue(new string[]{ tools[i].Desc});// tool descr
-                            _stringLibRef1List[i].Value = tools[i].HolderLibraryRef;// HolderLibRef
-                            GUItoolHolderDescriptionList[i].SetValue(new []{ tools[i].CurrentToolHolderDescr});// toolHolder descr
+                            _doubleToolDiamList[i].Value = localTool.Diam;// диаметр инструмента
+                            _offsetOfToolList[i].Value = localTool.ZOffset;//  вылет инструмента
+                            GUItoolDescriptionList[i].SetValue(new string[]{ localTool.Desc});// tool descr
+                            _stringLibRef1List[i].Value = localTool.HolderLibraryRef;// HolderLibRef
+                            _multiline_string0List[i].SetValue(new []{ localTool.CurrentToolHolderDescr});// toolHolder descr
                             //refreshGUIValues();
                         }
                         catch (Exception ex)
@@ -467,7 +467,7 @@ public class ToolHolderDialog
                     //separator04 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator04");
                     //stringLibRef1 = (NXOpen.BlockStyler.StringBlock)theDialog.TopBlock.FindBlock("stringLibRef1");
                     //separator05 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator05");
-                    //GUItoolHolderDescription = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock("GUItoolHolderDescription");
+                    //multiline_string0 = (NXOpen.BlockStyler.MultilineString)theDialog.TopBlock.FindBlock("multiline_string0");
                     //separator06 = (NXOpen.BlockStyler.Separator)theDialog.TopBlock.FindBlock("separator06");
                     //tree_control0 = (NXOpen.BlockStyler.Tree)theDialog.TopBlock.FindBlock("tree_control0");
 
@@ -561,7 +561,7 @@ public class ToolHolderDialog
             _separator04List.Add(new Object() as Separator);
             _stringLibRef1List.Add(new Object() as StringBlock);
             _separator05List.Add(new Object() as Separator);
-            GUItoolHolderDescriptionList.Add(new Object() as MultilineString);
+            _multiline_string0List.Add(new Object() as MultilineString);
             _separator06List.Add(new Object() as Separator);
             _tree_control0List.Add(new Object() as Tree);
         }
@@ -704,7 +704,7 @@ public class ToolHolderDialog
             {
             //---------Enter your code here-----------
             }
-            else if(block == GUItoolHolderDescription)
+            else if(block == multiline_string0)
             {
             //---------Enter your code here-----------
             }

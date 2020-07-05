@@ -331,10 +331,10 @@
 														</PropertyList>
 													</item>
 												</Property>
-												<Property class="UICOMP_multiline_string" hierarchy="UGS::UICOMP_group" id="multiline_string0" mask="256" name="multiline_string0" presentation="Multi-line String" type="uicomp">
-													<item Expanded="1" class="UICOMP_multiline_string" hierarchy="UICOMP_separator" icon="styler_browser_multilinetext.bmp" id="multiline_string0" name="multiline_string0" notes="" presentation="Multi-line String" type="uicomp">
+												<Property class="UICOMP_multiline_string" hierarchy="UGS::UICOMP_group" id="GUItoolHolderDescription" mask="256" name="GUItoolHolderDescription" presentation="Multi-line String" type="uicomp">
+													<item Expanded="1" class="UICOMP_multiline_string" hierarchy="UICOMP_separator" icon="styler_browser_multilinetext.bmp" id="GUItoolHolderDescription" name="GUItoolHolderDescription" notes="" presentation="Multi-line String" type="uicomp">
 														<PropertyList id="id" mode="0">
-															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="API Name" mask="16400" name="API Name" sname="BlockID" source="3" type="string" value="multiline_string0"/>
+															
 															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Visibility" mask="0" name="Visibility" sname="Show" source="1" type="logical" value="True"/>
 															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Group" mask="16384" name="Group" sname="Group" source="1" type="logical" value="False"/>
 															<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="Expanded" mask="4" name="Expanded" sname="Expanded" source="1" type="logical" value="True"/>
@@ -370,7 +370,7 @@
 															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="ResizeHeightWithDialog" mask="16640" name="ResizeHeightWithDialog" sname="ResizeHeightWithDialog" source="1" type="logical" value="False"/>
 															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="MinimumHeight" mask="16640" name="MinimumHeight" sname="MinimumHeight" source="1" type="integer" value="1"/>
 															<Property ClassID="UGS::UICOMP_multiline_string" group="Block Specific::" hierarchy="UGS::UICOMP_multiline_string" id="Height" mask="16640" name="Height" sname="Height" source="1" type="integer" value="3"/>
-														</PropertyList>
+														<Property ClassID="UGS::UICOMP" group="General::" hierarchy="UGS::UICOMP_multiline_string" id="API Name" mask="16656" name="API Name" sname="BlockID" source="3" type="string" value="GUItoolHolderDescription"/></PropertyList>
 													</item>
 												</Property>
 												<Property class="UICOMP_separator" hierarchy="UGS::UICOMP_group" id="separator06" mask="256" name="separator06" presentation="Separator" type="uicomp">

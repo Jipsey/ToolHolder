@@ -29,6 +29,7 @@ namespace ToolHolder_NS.Model
         private string _currentToolHolderDescr;
         private MillToolBuilder _toolBuilder;
         private thNXToolHolder[] _possibleChoice;
+        private bool _hasHolder;
 
         public Tool Tool
         {
@@ -87,29 +88,65 @@ namespace ToolHolder_NS.Model
         /// <param name="tool"></param>
         public thNXTool(Tool tool, Operation operation)
         {
+            //TODO переделать реализацию инициализации поля nxToolHolder
             //GetRequiredParams(tool.Tag, operation);
 
             Tool = tool;
             _toolNumber = setToolNumber();
             _toolName = Tool.Name;
             thNXSession.Ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DESCRIPTION, value: out var value );
+            _desc = enc(value);
             thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DIAMETER, value: out _diam);
             thNXSession.Ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HOLDER_LIBREF, value: out _holderLibref);
             thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: 7358, value: out _shankDiam);
             thNXSession.Ufs.Param.AskStrValue(Tool.GetMembers().FirstOrDefault().Tag, UFConstants.UF_PARAM_TL_HOLDER_DESCRIPTION , out _currentToolHolderDescr);
+            _hasHolder = IsToolHolderAppointedTo(tool);
+
             if (_shankDiam == 0)
                 _shankDiam = Diam;
 
-            _zOffset = determinateZOffset(); 
+            _zOffset = determinateZOffset();
 
-           //thNXSession.Ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out _zOffset);
+            //thNXSession.Ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out _zOffset);
 
-            if (HolderLibraryRef == null || HolderLibraryRef.Equals(string.Empty))
-                nxToolHolder = null;
-            else if (thNXSession._toolHolderDictionary.Values.Any(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef)))
-                nxToolHolder = setThNxToolHolder();
-            _desc = enc(value);
+
+            nxToolHolder = _hasHolder ? IsToolHolderFromLibrary(tool) ?  setThNxToolHolder() :  null :  null;
+
+            //if (HolderLibraryRef == null || HolderLibraryRef.Equals(string.Empty))
+            //    nxToolHolder = null;
+            //else if (thNXSession._toolHolderDictionary.Values.Any(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef)))
+            //    nxToolHolder = setThNxToolHolder();
+
+
+
             //definePossibleList();
+        }
+
+        /// <summary>
+        /// возвращет булево значение назначена ли оправка
+        /// </summary>
+        /// <param name="tool"></param>
+        /// <returns></returns>
+        private bool IsToolHolderAppointedTo(Tool tool)
+        {
+            int value;
+            thNXSession.Ufs.Param.AskIntValue(tool.Tag,1156,out value);
+
+            int localCnt;
+            thNXSession.Ufs.Cutter.AskSectionCount(tool.Tag,out localCnt);
+        
+            return localCnt != 0;
+        }
+        /// <summary>
+        /// возвращает булеов значение назначенная оправка из библиотеки или внешняя
+        /// </summary>
+        /// <returns></returns>
+        private bool IsToolHolderFromLibrary(Tool tool)
+        {
+            bool answer = thNXSession._toolHolderDictionary.Values.Any(holder =>
+                holder.HolderLibraryReference.Equals(HolderLibraryRef));
+
+            return answer;
         }
 
         public void definePossibleList()
@@ -284,13 +321,13 @@ namespace ToolHolder_NS.Model
 
         public void setToolHolder(string entryLibRef)
         {
-            int cnt;
-            thNXSession.Ufs.Cutter.AskSectionCount(_tool.Tag, out cnt);
+            //int cnt;
+            //thNXSession.Ufs.Cutter.AskSectionCount(_tool.Tag, out cnt);
             thNXSession.Ufs.Param.SetStrValue(_tool.Tag, UFConstants.UF_PARAM_TL_HOLDER_LIBREF, entryLibRef);
 
 
-            if (cnt > 0)
-                removeHolderSections(cnt);
+            if (IsToolHolderAppointedTo(_tool))
+                removeHolderSections();
 
             var possibleHolder = PossibleChoice.Where(th => th.HolderLibraryReference.Equals(entryLibRef)).ToList();
             if (possibleHolder.Count > 0)
@@ -299,15 +336,14 @@ namespace ToolHolder_NS.Model
             else new Exception("В массиве возможных державок не найдено ссылочное имя державки!");
         }
 
-        private void removeHolderSections(int cnt)
+        private void removeHolderSections()
         {
             //TODO далее удалить
-
-            int cnt2 = 0;
+            int localCnt;
             UFCutter.HolderSection[] hs;
-            thNXSession.Ufs.Cutter.AskHolderData(_tool.Tag, out cnt2, out hs);
+            thNXSession.Ufs.Cutter.AskHolderData(_tool.Tag, out localCnt, out hs);
 
-            for (int i = 0; i < cnt; i++)
+            for (int i = 0; i < localCnt; i++)
             {
                 thNXSession.Ufs.Cutter.DeleteHolderSection(_tool.Tag,0);
             }
@@ -345,11 +381,20 @@ namespace ToolHolder_NS.Model
             refreshHolderInfo(entryLibRef);
         }
 
-
+        /// <summary>
+        /// метод назначает ТОЛЬКО объект ThNxToolHolder
+        /// </summary>
+        /// <returns></returns>
         private thNXToolHolder setThNxToolHolder()
         {
-            return thNXSession._toolHolderDictionary.Values
+            var localHolder = thNXSession._toolHolderDictionary.Values
                 .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef));
+            //if( localHolder != null)
+            //{
+            //    _holderLibref = localHolder.HolderLibraryReference;
+            //    _currentToolHolderDescr = localHolder.Description;
+            //}
+            return localHolder;
         }
         /// <summary>
         /// обновляет поля в объекте thNXTool

@@ -140,8 +140,6 @@ namespace ToolHolder_NS.Model
             get { return _toolArray; }
         }
 
-        public Dictionary<string, thNXToolHolder> ToolHolderDictionary => _toolHolderDictionary;
-
 
 
         private void initializeHolderfromLibrary()
@@ -179,9 +177,29 @@ namespace ToolHolder_NS.Model
         private void initializeTools()
         {
             List <thNXTool> list = new  List <thNXTool> ();
-            operations = WorkPart.CAMSetup.CAMOperationCollection.ToArray()
-                .Where(op => op.GetParent(CAMSetup.View.ProgramOrder).GetType().Name.Equals("NCGroup")).ToArray();
 
+            //группируем операции по инструменту, предварительно отфильтровывая(.Where()) операции без инструмента и из неиспользованных 
+            operations = WorkPart.CAMSetup.CAMOperationCollection.ToArray()
+                .Where(op => op.GetParent(CAMSetup.View.ProgramOrder).GetType().Name.Equals("NCGroup") && !op.GetParent(CAMSetup.View.MachineTool).Name.Equals("NONE"))
+                .GroupBy(op => op.GetParent(CAMSetup.View.MachineTool).Tag)
+                .Select(gr => gr.First())
+                .ToArray();
+
+
+
+            //operations = WorkPart.CAMSetup.CAMOperationCollection.ToArray()
+            //    .Where(op => op.GetParent(CAMSetup.View.ProgramOrder).GetType().Name.Equals("NCGroup")).ToArray();
+            //группируем операции по инструменту, предварительно отфильтровывая(.Where()) операции без инструмента
+            //var groupedLocalOperations = operations.Where(op => !op.GetParent(CAMSetup.View.MachineTool).Name.Equals("NONE"))
+            //    .GroupBy(op => op.GetParent(CAMSetup.View.MachineTool).Tag)
+            //    .Select(gr => gr.First()).ToList();
+            //LinkedList<NCGroup> ll = new LinkedList<NCGroup>();
+            //foreach (var groupedOperation in groupedLocalOperations)
+            //{
+            //  var t =  groupedOperation.GetParent(CAMSetup.View.MachineTool);
+            //  ll.AddLast(t);
+            //}
+            
             foreach (var operation in operations)
             {
                var tool = operation.GetParent(CAMSetup.View.MachineTool);

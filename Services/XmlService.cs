@@ -34,7 +34,7 @@ public class XmlService
             "separator04",
             "stringLibRef1",
             "separator05",
-            "multiline_string0",
+            "GUItoolHolderDescription",
             "separator06",
             "tree_control0",
         };

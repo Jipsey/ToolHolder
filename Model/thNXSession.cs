@@ -21,7 +21,7 @@ namespace ToolHolder_NS.Model
         private static string UGII_CAM_LIBRARY_TOOL_DIR;
         private static string UGII_CAM_LIBRARY_TOOL_METRIC_DIR;
         private static Operation[] operations;
-        private thNXTool [] toolArray;
+        private thNXTool[] _toolArray;
         // public static thNXToolHolder [] _toolHolderArrayFromLibrary;
         public static Dictionary<string, thNXToolHolder>  _toolHolderDictionary ; 
         public static ListingWindow lw ;
@@ -130,7 +130,6 @@ namespace ToolHolder_NS.Model
 
                 string libRef = l[1];
                 holderList.Add(new thNXToolHolder(l, xy.FindAll(i => i.Length == 8 && i[1] == libRef)));
-             
             }
 
             _toolHolderDictionary = holderList.ToArray().ToDictionary(k => k.HolderLibraryReference);
@@ -138,7 +137,7 @@ namespace ToolHolder_NS.Model
 
         public thNXTool[] ToolArray
         {
-            get { return toolArray; }
+            get { return _toolArray; }
         }
 
         public Dictionary<string, thNXToolHolder> ToolHolderDictionary => _toolHolderDictionary;
@@ -188,7 +187,7 @@ namespace ToolHolder_NS.Model
                var tool = operation.GetParent(CAMSetup.View.MachineTool);
                if (tool != null && tool is Tool)
                {
-                   thNXTool thNxThNxTool = new thNXTool((Tool)tool);
+                   thNXTool thNxThNxTool = new thNXTool((Tool)tool, operation);
 
                    if (!list.Contains(thNxThNxTool))
                        list.Add(thNxThNxTool);
@@ -196,10 +195,10 @@ namespace ToolHolder_NS.Model
             }
            
             list.Sort();
-            toolArray = list.ToArray();
+            _toolArray = list.ToArray();
 
-            if (toolArray != null)
-                foreach (var element in toolArray)
+            if (_toolArray != null)
+                foreach (var element in _toolArray)
                 {
                     element.definePossibleList();
                 }

@@ -28,7 +28,7 @@ public class XmlService
             "separator011",
             "offsetOfTool",
             "separator02",
-            "multiline_string01",
+            "GUItoolDescription",
             "separator03",
             "stringLabelHolder",
             "separator04",
@@ -52,7 +52,6 @@ public class XmlService
            
 
             buildDLXFile();
-
         }
 
         public static string TempoXmlDocPath
@@ -105,7 +104,8 @@ public class XmlService
             {
                 if (NameArrays.Contains(attribute.Value))
                     attribute.Value += counter;
-            }
+               // attribute.Value += counter;
+        }
              if(entryNode.HasChildNodes)
                  foreach (XmlNode child in entryNode.ChildNodes)
                  {

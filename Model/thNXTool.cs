@@ -1,19 +1,24 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using NXOpen.CAM;
 using NXOpen.UF;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
+using NXOpen;
+using static System.Double;
 using colletTypeSize = ToolHolder_NS.Model.thNXToolHolder.ColletTypeSize;
+using Operation = NXOpen.CAM.Operation;
 
 namespace ToolHolder_NS.Model
 {
     public class thNXTool : IEquatable<thNXTool>, IComparable
     {
         private Tool _tool;
-        public int _toolNumber;
+        private int _toolNumber;
         private thNXToolHolder nxToolHolder;
         private double _diam;
         private double _shankDiam;
@@ -21,8 +26,9 @@ namespace ToolHolder_NS.Model
         private string _desc;
         private string _toolName;
         private string _holderLibref;
+        private string _currentToolHolderDescr;
         private MillToolBuilder _toolBuilder;
-        private thNXToolHolder[] possibleChoice;
+        private thNXToolHolder[] _possibleChoice;
 
         public Tool Tool
         {
@@ -41,8 +47,8 @@ namespace ToolHolder_NS.Model
             get
             {
                 if (_toolBuilder != null)
-                return _toolBuilder ;
-                return createBuilder(_tool);
+                    return _toolBuilder ;
+                return createBuilder();
             }
         }
 
@@ -53,16 +59,35 @@ namespace ToolHolder_NS.Model
 
         public string HolderLibraryRef => _holderLibref;
 
-        public thNXToolHolder[] PossibleChoice => possibleChoice;
+        public thNXToolHolder[] PossibleChoice => _possibleChoice;
+
+        public double Diam
+        {
+            get
+            {
+                return _diam;
+            }
+        }
+
+        public int ZOffset
+        {
+            get => _zOffset;
+        }
+
+        public string Desc
+        {
+            get { return _desc; }
+        }
+
+        public string CurrentToolHolderDescr => _currentToolHolderDescr;
 
         /// <summary>
         /// подумать над тем чтобы конструктор не вызывался на каждой операции, а только если лист не содержит данный инструмент
         /// </summary>
         /// <param name="tool"></param>
-        public thNXTool(Tool tool)
+        public thNXTool(Tool tool, Operation operation)
         {
-
-           // GetRequiredParams(tool.Tag, operation);
+            //GetRequiredParams(tool.Tag, operation);
 
             Tool = tool;
             _toolNumber = setToolNumber();
@@ -71,21 +96,19 @@ namespace ToolHolder_NS.Model
             thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_DIAMETER, value: out _diam);
             thNXSession.Ufs.Param.AskStrValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HOLDER_LIBREF, value: out _holderLibref);
             thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: 7358, value: out _shankDiam);
+            thNXSession.Ufs.Param.AskStrValue(Tool.GetMembers().FirstOrDefault().Tag, UFConstants.UF_PARAM_TL_HOLDER_DESCRIPTION , out _currentToolHolderDescr);
             if (_shankDiam == 0)
-                _shankDiam = _diam;
+                _shankDiam = Diam;
 
             _zOffset = determinateZOffset(); 
 
-            thNXSession.Ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out _zOffset);
+           //thNXSession.Ufs.Param.AskIntValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out _zOffset);
 
             if (HolderLibraryRef == null || HolderLibraryRef.Equals(string.Empty))
                 nxToolHolder = null;
             else if (thNXSession._toolHolderDictionary.Values.Any(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef)))
-                nxToolHolder = thNXSession._toolHolderDictionary.Values
-                       .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef));
-
+                nxToolHolder = setThNxToolHolder();
             _desc = enc(value);
-
             //definePossibleList();
         }
 
@@ -95,14 +118,8 @@ namespace ToolHolder_NS.Model
             var tempArr = thNXSession._toolHolderDictionary.Values
                        .Where(holder => holder.RecordType.Equals("1")).ToArray();
 
-            //thNXToolHolder[] collets = determCollet(tempArr);
-            //thNXToolHolder[] termoHolder = determTermoHolder(tempArr);
-            //thNXToolHolder[] hydroHolders = determHydroHolders(tempArr);
-            //thNXToolHolder[] weldonHolders = determWeldonHolders(tempArr);
-            //thNXToolHolder[] datronCollets = determDatronCollets(tempArr);
             if(PossibleChoice is null)
-                 possibleChoice =  parseChoice(tempArr);
-
+                 _possibleChoice =  parseChoice(tempArr);
         }
 
         private thNXToolHolder[] parseChoice(thNXToolHolder[] tempArr)
@@ -149,7 +166,7 @@ namespace ToolHolder_NS.Model
                 UFParam.Status paramStatus;
                 
                 thNXSession.Ufs.Param.AskParamAttributes(index,out indexAttribute);
-                thNXSession.lw.WriteLine(String.Format("номер параметра  {0}; имя атрибута  {1} ", index, indexAttribute.name));
+                thNXSession.lw.WriteLine(String.Format("номер параметра  {0}; имя атрибута  {1}; тип {2}; ключ {3} ", index, indexAttribute.name, indexAttribute.type, indexAttribute.key));
             }
 
             thNXSession.lw.WriteLine(new string('*',80));
@@ -231,17 +248,28 @@ namespace ToolHolder_NS.Model
         }
 
 
-        private MillToolBuilder createBuilder(Tool tool)
+        private MillToolBuilder createBuilder()
         {
-          return thNXSession.WorkPart.CAMSetup.CAMGroupCollection.CreateMillToolBuilder(tool);          
+           
+
+          return thNXSession.WorkPart.CAMSetup.CAMGroupCollection.CreateMillToolBuilder(_tool);          
         }
 
         private int determinateZOffset()
         {
             double holderOffset;
             double length ;
+            bool useTaperShank;
+            double shankLengh;
+
             thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_Z_OFFSET, value: out holderOffset);
             thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: UFConstants.UF_PARAM_TL_HEIGHT, value: out length);
+            thNXSession.Ufs.Param.AskLogicalValue(Tool.GetMembers().FirstOrDefault().Tag, 7361,out useTaperShank); //метод возвращает булево значение указывающее есть ли хвостовик у инструмента
+
+            if (useTaperShank)
+            { thNXSession.Ufs.Param.AskDoubleValue(param_tag: Tool.GetMembers().FirstOrDefault().Tag, param_index: 7359, value: out shankLengh); // возвращает значение длины хвостовика
+                length += shankLengh;
+            }
 
             return (int) (length - holderOffset);
         }
@@ -254,6 +282,101 @@ namespace ToolHolder_NS.Model
             return value;
         }
 
+        public void setToolHolder(string entryLibRef)
+        {
+            int cnt;
+            thNXSession.Ufs.Cutter.AskSectionCount(_tool.Tag, out cnt);
+            thNXSession.Ufs.Param.SetStrValue(_tool.Tag, UFConstants.UF_PARAM_TL_HOLDER_LIBREF, entryLibRef);
+
+
+            if (cnt > 0)
+                removeHolderSections(cnt);
+
+            var possibleHolder = PossibleChoice.Where(th => th.HolderLibraryReference.Equals(entryLibRef)).ToList();
+            if (possibleHolder.Count > 0)
+                buildHolderSections(possibleHolder.FirstOrDefault(), entryLibRef);
+
+            else new Exception("В массиве возможных державок не найдено ссылочное имя державки!");
+        }
+
+        private void removeHolderSections(int cnt)
+        {
+            //TODO далее удалить
+
+            int cnt2 = 0;
+            UFCutter.HolderSection[] hs;
+            thNXSession.Ufs.Cutter.AskHolderData(_tool.Tag, out cnt2, out hs);
+
+            for (int i = 0; i < cnt; i++)
+            {
+                thNXSession.Ufs.Cutter.DeleteHolderSection(_tool.Tag,0);
+            }
+        }
+
+        /// <summary>
+        /// метод создаёт секции державки
+        /// </summary>
+        /// <param name="nxToolHolder"></param>
+        private void buildHolderSections(thNXToolHolder nxToolHolder, string entryLibRef)
+        {
+            var shorterSectionList =  parseShorterSectionList(nxToolHolder.SectionList);
+
+ //         UFCutter.HolderSection[] hsArr;
+         
+          // DIAM LENGTH TAPER CRAD
+
+            foreach (var section in shorterSectionList)
+            {
+                double length = Parse(section[1], CultureInfo.InvariantCulture);
+                if(length <=0)
+                    continue;
+                UFCutter.HolderSection hs = new UFCutter.HolderSection
+                {
+                    diameter = Parse(section[0], CultureInfo.InvariantCulture),
+                    length = length,
+                    taper = Parse(section[2], CultureInfo.InvariantCulture),
+                    corner = Parse(section[3], CultureInfo.InvariantCulture)
+                };
+
+                thNXSession.Ufs.Cutter.CreateHolderSection(_tool.Tag, ref hs);
+            }
+
+            thNXSession.Ufs.Param.SetDoubleValue(_tool.Tag, 1049, 5);
+            refreshHolderInfo(entryLibRef);
+        }
+
+
+        private thNXToolHolder setThNxToolHolder()
+        {
+            return thNXSession._toolHolderDictionary.Values
+                .FirstOrDefault(holder => holder.HolderLibraryReference.Equals(HolderLibraryRef));
+        }
+        /// <summary>
+        /// обновляет поля в объекте thNXTool
+        /// </summary>
+        /// <param name="entryLibRef"></param>
+        private void refreshHolderInfo(string entryLibRef)
+        {
+            _holderLibref = entryLibRef;
+            nxToolHolder = setThNxToolHolder();
+            _currentToolHolderDescr = nxToolHolder.Description;
+            thNXSession.Ufs.Param.SetStrValue(_tool.Tag, 1064, nxToolHolder.Description); // Назначает описание оправки
+        }
+
+        private List<String[]> parseShorterSectionList(List<string[]> sectionList)
+        {
+            var answer = new List<String[]>();
+
+            if(sectionList.Count > 0 && sectionList != null)
+                foreach (var section in sectionList)
+                {
+                    var valueArray = new String[4];
+                    Array.Copy(section,4,valueArray,0,4);
+                    answer.Add(valueArray);
+                }
+
+            return answer;
+        }
 
 
         /// <summary>

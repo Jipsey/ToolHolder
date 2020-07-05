@@ -90,7 +90,7 @@ namespace ToolHolder_NS.Model
 
         public thNXToolHolder (string [] generalRec, List <string []> holderRec)
         {
-            _holderLibraryReference = generalRec[1];
+            _holderLibraryReference = generalRec[1].Trim();
             _recordType = generalRec[2].Trim();
             _holderType = generalRec[3].Trim();
             _subtype = generalRec[4].Trim();
